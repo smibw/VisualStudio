@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 using std::cout;
 using std::cin;
@@ -21,7 +21,7 @@ void main()
 	int summ= 0;
 	
 #ifdef VVOD_MASSIVA
-	std::cout << "Ââåäèòå çíà÷åíèå ìàññèâà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	for (int i = 0; i < n; i++)
 	{
 		std::cin >> arr[i];
@@ -48,8 +48,8 @@ void main()
 	{
 		summ += arr[i];
 	}
-	std::cout<<"Ñóììà ýëåìåíòîâ ìàññèâà: " << summ<<tab;
-	std::cout << "Ñðåäíåå àðèôìåòè÷åñêîå ýëåìåíòîâ ìàññèâà: " << (double)summ / n<<tab;
+	std::cout<<"Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << summ<<tab;
+	std::cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << (double)summ / n<<tab;
 #endif // SUMMA_MASSIVA
 
 #ifdef MIN_MAX_ZNACHENIE_MASSIVA
@@ -60,7 +60,7 @@ void main()
 		if (arr[i] < min) min = arr[i];
 		else if (arr[i] > max) max = arr[i];
 	}
-	std::cout << "Ìèíèìàëüíîå çíà÷åíèå â ìàññèâå: " << min << endl;
-	std::cout << "Ìàêñèìàëüíîå çíà÷åíèå â ìàññèâå: " << max << endl;
+	std::cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ: " << min << endl;
+	std::cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ: " << max << endl;
 #endif // MIN_MAX_ZNACHENIE_MASSIVA
 }
