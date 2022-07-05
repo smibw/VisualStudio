@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatrixMultiplication", "Mat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sort2D", "Sort2D\Sort2D.vcxproj", "{B7A7051E-74DF-4BD6-B5A2-7BE80FE057F9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testing", "testing\testing.vcxproj", "{F513A2E5-62EA-498A-91C9-2525C2283DAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{B7A7051E-74DF-4BD6-B5A2-7BE80FE057F9}.Release|x64.Build.0 = Release|x64
 		{B7A7051E-74DF-4BD6-B5A2-7BE80FE057F9}.Release|x86.ActiveCfg = Release|Win32
 		{B7A7051E-74DF-4BD6-B5A2-7BE80FE057F9}.Release|x86.Build.0 = Release|Win32
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Debug|x64.ActiveCfg = Debug|x64
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Debug|x64.Build.0 = Debug|x64
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Debug|x86.ActiveCfg = Debug|Win32
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Debug|x86.Build.0 = Debug|Win32
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Release|x64.ActiveCfg = Release|x64
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Release|x64.Build.0 = Release|x64
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Release|x86.ActiveCfg = Release|Win32
+		{F513A2E5-62EA-498A-91C9-2525C2283DAB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
