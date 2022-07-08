@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 void main()
@@ -7,7 +7,7 @@ void main()
 	double operand_a;
 	double operand_b;
 	char operatorr;
-	cout << "Ââåäèòå àðèôìåòè÷åñêîå âûðàæåíèå: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ: ";
 	cin >> operand_a >> operatorr >> operand_b;
 	switch (operatorr)
 	{

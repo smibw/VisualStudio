@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 using namespace std;
 //#define SearchCharType
 //#define Lineconst
@@ -17,7 +17,7 @@ int main()
 	cout << typeid('+').name() << endl;
 #endif
 #ifdef Lineconst
-	cout << "Строковые константы:\n";
+	cout << "РЎС‚СЂРѕРєРѕРІС‹Рµ РєРѕРЅСЃС‚Р°РЅС‚С‹:\n";
 	cout << "Hello world" << endl;
 	cout << sizeof("Hello world") << endl;
 	cout << "+" << endl;

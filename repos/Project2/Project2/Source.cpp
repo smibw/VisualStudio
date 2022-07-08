@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 void main()
@@ -7,14 +7,14 @@ setlocale (LC_ALL, "Russian");
 	double znachenie_a;
 	double znachenie_b;
 	double znachenie_c;
-	cout << "Ïðîãðàììà ïî ïåðåìåíå çíà÷åíèé ìåñòàìè.\n";
-	cout << "Ââåäèòå çíà÷åíèå à: "; cin >> znachenie_a;
-	cout << "Ââåäèòå çíà÷åíèå b: "; cin >> znachenie_b;
+	cout << "ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð¿Ð¾ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹ Ð¼ÐµÑÑ‚Ð°Ð¼Ð¸.\n";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð°: "; cin >> znachenie_a;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ b: "; cin >> znachenie_b;
 	znachenie_c = znachenie_a;
 	znachenie_a = znachenie_b;
 	znachenie_b = znachenie_c;
-	cout << "Çíà÷åíèå à: " << znachenie_a << endl;
-	cout << "Çíà÷åíèå b: " << znachenie_b << endl;
+	cout << "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð°: " << znachenie_a << endl;
+	cout << "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ b: " << znachenie_b << endl;
 
 }
 

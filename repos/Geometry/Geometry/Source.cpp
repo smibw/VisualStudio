@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 using std::cout;
 using std::cin;
@@ -22,7 +22,7 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	int n,copy,copy_1,copy_2,copy_3;
-	cout << "Ââåäèòå ðàçìåð ôèãóðû: "; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: "; cin >> n;
 	copy = n;
 	copy_1 = n;
 	copy_2 = 0;
@@ -159,7 +159,7 @@ void main()
 
 			cout << endl;
 		}
-		óêðàë êðóòîé êîä äëÿ ðîìáà
+		ÑƒÐºÑ€Ð°Ð» ÐºÑ€ÑƒÑ‚Ð¾Ð¹ ÐºÐ¾Ð´ Ð´Ð»Ñ Ñ€Ð¾Ð¼Ð±Ð°
 #endif // KRADENII_KOD_ROMBA
 
 #ifdef CHEREDOVANIE

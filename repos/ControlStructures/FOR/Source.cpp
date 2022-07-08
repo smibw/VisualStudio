@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <conio.h>
 using namespace std;
 using std::cout;
@@ -8,7 +8,7 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	int n;
-	cout << "Ââåäèòå êîëè÷åñòâî èòåðàöèé: "; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¹: "; cin >> n;
 	for (int i=0;i<n;i++)
 	{
 		cout <<i<< "\t";

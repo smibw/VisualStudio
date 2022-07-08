@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include<conio.h>
 using namespace std;
 using std::cout;
@@ -20,7 +20,7 @@ void main()
 {
 	int n;
 	setlocale(LC_ALL, "");
-	std::cout << "Ðàçìåðíîñòü øàõìàòíîé äîñêè: "; std::cin >> n;
+	std::cout << "Ð Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ ÑˆÐ°Ñ…Ð¼Ð°Ñ‚Ð½Ð¾Ð¹ Ð´Ð¾ÑÐºÐ¸: "; std::cin >> n;
 	setlocale(LC_ALL, "C");
 /*
 	for (int i = 0; i <n ; i++)

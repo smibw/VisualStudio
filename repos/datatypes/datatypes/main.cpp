@@ -1,4 +1,4 @@
-//datatypes
+﻿//datatypes
 #include <iostream>
 using namespace std;
 //#define INTEGRAL_TYPES

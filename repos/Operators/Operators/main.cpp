@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 //#define Arithmetical_Operators
 #define Trinary
@@ -17,7 +17,7 @@ void main()
 #endif
 #ifdef Trinary
 	int a;
-	cout << "Ââåäèòå à: "; cin >> a; cout << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð°: "; cin >> a; cout << endl;
 	a > 5 ? a += 8 : a *= 3; cout << a;
 #endif
 #ifdef Assignment_Operator
@@ -27,7 +27,7 @@ void main()
 	int c = (a * b) / d;
 	int f ,g,h;
 	f = g = h = 0;
-//	l - value = r - value; äëÿ âñåõ îïåðàòîîâ àññîöèàòèâíîñòü ñëåâà íà ïðàâî, äëÿ ïðèñâàèâàíèÿ ñïðàâà íàëåâî;
+//	l - value = r - value; Ð´Ð»Ñ Ð²ÑÐµÑ… Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ð¾Ð² Ð°ÑÑÐ¾Ñ†Ð¸Ð°Ñ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ ÑÐ»ÐµÐ²Ð° Ð½Ð° Ð¿Ñ€Ð°Ð²Ð¾, Ð´Ð»Ñ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ ÑÐ¿Ñ€Ð°Ð²Ð° Ð½Ð°Ð»ÐµÐ²Ð¾;
 	cout << c;
 #endif
 #ifdef Increment_Decrement

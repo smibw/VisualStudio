@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <conio.h>
 using namespace std;
 
@@ -18,13 +18,13 @@ void main()
 			key = _getch();
 			switch (key)
 			{
-			case'w':case'W':case UP_ARROW:		cout << "Âïåðåä" <<	endl;	break;
-			case's':case'S':case DOWN_ARROW :	cout << "Íàçàä" <<	endl;	break;
-			case'a':case'A':case LEFT_ARROW:	cout << "Íàëåâî" << endl;	break;
-			case'd':case'D':case RIGHT_ARROW :	cout << "Âïðàâî" << endl;	break;
-			case' ':	cout << "Ïðûæîê" << endl;	break;
-			case Enter:	cout << "Îãîíü" <<	endl;	break;
-			case Escape:cout << "Âûõîä" <<	endl;	break;
+			case'w':case'W':case UP_ARROW:		cout << "Ð’Ð¿ÐµÑ€ÐµÐ´" <<	endl;	break;
+			case's':case'S':case DOWN_ARROW :	cout << "ÐÐ°Ð·Ð°Ð´" <<	endl;	break;
+			case'a':case'A':case LEFT_ARROW:	cout << "ÐÐ°Ð»ÐµÐ²Ð¾" << endl;	break;
+			case'd':case'D':case RIGHT_ARROW :	cout << "Ð’Ð¿Ñ€Ð°Ð²Ð¾" << endl;	break;
+			case' ':	cout << "ÐŸÑ€Ñ‹Ð¶Ð¾Ðº" << endl;	break;
+			case Enter:	cout << "ÐžÐ³Ð¾Ð½ÑŒ" <<	endl;	break;
+			case Escape:cout << "Ð’Ñ‹Ñ…Ð¾Ð´" <<	endl;	break;
 			case -32:								break;
 			default:	cout << "Error" <<	endl;
 			}

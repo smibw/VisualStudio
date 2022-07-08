@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 //#define Task1
 //#define Task2
@@ -11,11 +11,11 @@ void main()
 	double drobnoe_chislo;
 	int celoe_chislo;
 	double ostatok;
-	cout << "Ïðåîáðàçîâàíèå ÷èñëà â äåíåæíûé ôîðìàò.\n";
-		cout << "Ââåäèòå äðîáíîå ÷èñëî-> "; cin >> drobnoe_chislo;
+	cout << "ÐŸÑ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ‡Ð¸ÑÐ»Ð° Ð² Ð´ÐµÐ½ÐµÐ¶Ð½Ñ‹Ð¹ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚.\n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ñ€Ð¾Ð±Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾-> "; cin >> drobnoe_chislo;
 		celoe_chislo = drobnoe_chislo;
 		ostatok = (drobnoe_chislo - celoe_chislo)*100;
-		cout << drobnoe_chislo << "ðóá.-ýòî " << celoe_chislo << "ðóá." << ostatok << "êîï.";
+		cout << drobnoe_chislo << "Ñ€ÑƒÐ±.-ÑÑ‚Ð¾ " << celoe_chislo << "Ñ€ÑƒÐ±." << ostatok << "ÐºÐ¾Ð¿.";
 #endif
 #ifdef Task2
 		double cena_tetradi;
@@ -23,26 +23,26 @@ void main()
 		double cena_karandasha;
 		int kolichestvo_karandashey;
 		double stoimost_pokupki;
-		cout << "Âû÷èñëåíèå ñòîèìîñòè ïîêóïêè.\n";
-		cout << "Ââåäèòå öåíó òåòðàäè: "; cin >> cena_tetradi;
-		cout << "Ââåäèòå êîëè÷åñòâî òåòðàäåé: "; cin >> kolichestvo_tetradey;
-		cout << "Ââåäèòå öåíó êàðàäàøà: "; cin >> cena_karandasha;
-		cout << "Ââåäèòå êîëè÷åñòâî êàðàíäàøà: "; cin >> kolichestvo_karandashey;
+		cout << "Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸.\n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ½Ñƒ Ñ‚ÐµÑ‚Ñ€Ð°Ð´Ð¸: "; cin >> cena_tetradi;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ‚ÐµÑ‚Ñ€Ð°Ð´ÐµÐ¹: "; cin >> kolichestvo_tetradey;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ½Ñƒ ÐºÐ°Ñ€Ð°Ð´Ð°ÑˆÐ°: "; cin >> cena_karandasha;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐºÐ°Ñ€Ð°Ð½Ð´Ð°ÑˆÐ°: "; cin >> kolichestvo_karandashey;
 		stoimost_pokupki = cena_tetradi * kolichestvo_tetradey + cena_karandasha * kolichestvo_karandashey;
-		cout << "Ñòîèìîñòü ïîêóïêè: " << stoimost_pokupki;
+		cout << "Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸: " << stoimost_pokupki;
 #endif
 #ifdef Task3
 		double cena_tetradi;
 		double cena_oblozhki;
 		int kolichestvo_komplectov;
 		double stoimost_pokupki;
-		cout << "Âû÷èñëåíèå ñòîèìîñòè ïîêóïêè.\n";
-		cout << "Ââåäèòå èñõîäíûå äàííûå: \n";
-		cout << "Öåíà òåòðàäè: "; cin >> cena_tetradi;
-		cout << "Öåíà îáëîæêè: "; cin >> cena_oblozhki;
-		cout << "Êîëè÷åñòâî êîìïëåêòîâ: "; cin >> kolichestvo_komplectov;
+		cout << "Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸.\n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸ÑÑ…Ð¾Ð´Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ: \n";
+		cout << "Ð¦ÐµÐ½Ð° Ñ‚ÐµÑ‚Ñ€Ð°Ð´Ð¸: "; cin >> cena_tetradi;
+		cout << "Ð¦ÐµÐ½Ð° Ð¾Ð±Ð»Ð¾Ð¶ÐºÐ¸: "; cin >> cena_oblozhki;
+		cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑ‚Ð¾Ð²: "; cin >> kolichestvo_komplectov;
 		stoimost_pokupki = (cena_tetradi + cena_oblozhki) * kolichestvo_komplectov;
-		cout << "Ñòîèìîñòü ïîêóïêè: " << stoimost_pokupki;
+		cout << "Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸: " << stoimost_pokupki;
 
 #endif
 #ifdef Task4
@@ -50,11 +50,11 @@ void main()
 		double rashod_benzina_na_100_km;
 		double cena_odnogo_litra_benzina;
 		double stoimost_poezdki;
-		cout << "Âû÷èñëåíèå ñòîèìîñòè ïîåçäêè íà äà÷ó è îáðàòíî.\n";
-		cout << "Ðàññòîÿíèå äî äà÷è(êì): "; cin >> rasstoyanie_do_dachi_km;
-		cout << "Ðàñõîä áåíçèíà(ëèòðîâ íà 100 êì ïðîáåãà): "; cin >> rashod_benzina_na_100_km;
-		cout << "Öåíà ëèòðà áåíçèíà(ðóá.): "; cin >> cena_odnogo_litra_benzina;
+		cout << "Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¿Ð¾ÐµÐ·Ð´ÐºÐ¸ Ð½Ð° Ð´Ð°Ñ‡Ñƒ Ð¸ Ð¾Ð±Ñ€Ð°Ñ‚Ð½Ð¾.\n";
+		cout << "Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð´Ð¾ Ð´Ð°Ñ‡Ð¸(ÐºÐ¼): "; cin >> rasstoyanie_do_dachi_km;
+		cout << "Ð Ð°ÑÑ…Ð¾Ð´ Ð±ÐµÐ½Ð·Ð¸Ð½Ð°(Ð»Ð¸Ñ‚Ñ€Ð¾Ð² Ð½Ð° 100 ÐºÐ¼ Ð¿Ñ€Ð¾Ð±ÐµÐ³Ð°): "; cin >> rashod_benzina_na_100_km;
+		cout << "Ð¦ÐµÐ½Ð° Ð»Ð¸Ñ‚Ñ€Ð° Ð±ÐµÐ½Ð·Ð¸Ð½Ð°(Ñ€ÑƒÐ±.): "; cin >> cena_odnogo_litra_benzina;
 		stoimost_poezdki = rashod_benzina_na_100_km / 100 * cena_odnogo_litra_benzina * rasstoyanie_do_dachi_km;
-		cout << "Ñòîèìîñòü ïîåçäêè íà äà÷ó: " << stoimost_poezdki << "ðóá.";
+		cout << "Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿Ð¾ÐµÐ·Ð´ÐºÐ¸ Ð½Ð° Ð´Ð°Ñ‡Ñƒ: " << stoimost_poezdki << "Ñ€ÑƒÐ±.";
 #endif
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <conio.h>
 using namespace std;
 //#define gfgf
@@ -10,7 +10,7 @@ void main()
 #ifdef gfgf
 	int i = 0;
 	int n;
-	cout << "Ââåäèòå êîëè÷åñòâî èòåðàöèé:"; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¹:"; cin >> n;
 	while (i < n)
 	{
 		cout << i++ << "Hello world!\n";
@@ -18,7 +18,7 @@ void main()
 #endif // gfgf
 #ifdef gfgf2
 	int n;
-	cout << "Ââåäèòå êîëè÷åñòâî èòåðàöèé:"; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¹:"; cin >> n;
 	while (n--)
 	{
 		cout << n << "Hello world!\n";
@@ -26,8 +26,8 @@ void main()
 #endif // gfgf2
 	char key;
 	do {
-		key = _getch();// _getch îæèäàåò íàæàòèÿ êëàâèøè è âøçâðàùàåò ASCII êîä íàæàòîé êëàâèøè
-		//_getch íàõîäèòñÿ â conio.h
+		key = _getch();// _getch Ð¾Ð¶Ð¸Ð´Ð°ÐµÑ‚ Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸ Ð¸ Ð²ÑˆÐ·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ASCII ÐºÐ¾Ð´ Ð½Ð°Ð¶Ð°Ñ‚Ð¾Ð¹ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸
+		//_getch Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð² conio.h
 		cout << (int)key << "\t" << key << endl;
 	} while (key!=27);
 }

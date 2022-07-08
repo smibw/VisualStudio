@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include<conio.h>
 using namespace std;
 //#define TASK_1
@@ -21,10 +21,10 @@ void main()
 	const int sravnenie = 0;
 	int startovoe_znachenie;
 	int i;
-	cout << "Ïðîãðàììà îïðåäåëÿþùàÿ ÿâëÿåòñÿ ÷èñëî äî äåñÿòêà ìèëëèîíîâ ïàëèíäðîìîì èëè íåò.\n";
+	cout << "ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð°Ñ ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð´Ð¾ Ð´ÐµÑÑÑ‚ÐºÐ° Ð¼Ð¸Ð»Ð»Ð¸Ð¾Ð½Ð¾Ð² Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼Ð¾Ð¼ Ð¸Ð»Ð¸ Ð½ÐµÑ‚.\n";
 	do
 	{
-		cout << "Ââåäèòå ÷èñëî â êëàâèàòóðû: "; cin >> chislo;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð² ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñ‹: "; cin >> chislo;
 		startovoe_znachenie = chislo;
 		counter = 1000000;
 		million = chislo / counter;
@@ -46,11 +46,11 @@ void main()
 		else if (sravnenie < tisyachi) chislo = edinica * 1000 + desyatki * 100 + sotni * 10 + tisyachi;
 		else if (sravnenie < sotni) chislo = edinica * 100 + desyatki * 10 + sotni;
 		else if (sravnenie < desyatki) chislo = edinica * 10 + desyatki;
-		else cout << "Âû ââåëè ÷èñëî ìåíüøå 10, îíî íå ìîæåò áûòü ïàëèíäðîìîì\n";
+		else cout << "Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼ÐµÐ½ÑŒÑˆÐµ 10, Ð¾Ð½Ð¾ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼Ð¾Ð¼\n";
 		cout << startovoe_znachenie << "=" << chislo << endl;
-		if (startovoe_znachenie == chislo) cout << "Äàííîå ÷èñëî ÿâëÿåòñÿ ïàëèíäðîìîì.\n";
-		else cout << "Äàííîå ÷èñëî ïàëèíäðîìîì íå ÿâëÿåòñÿ.\n";
-		cout << "Âû õîòèòå ïîâòîðèòü? Íàæìèòå 0\n"; cin >> i;
+		if (startovoe_znachenie == chislo) cout << "Ð”Ð°Ð½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼Ð¾Ð¼.\n";
+		else cout << "Ð”Ð°Ð½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼Ð¾Ð¼ Ð½Ðµ ÑÐ²Ð»ÑÐµÑ‚ÑÑ.\n";
+		cout << "Ð’Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ? ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ 0\n"; cin >> i;
 	} while (i==0);
 #endif // TASK_1
 #ifdef TASK_2
@@ -68,9 +68,9 @@ void main()
 	int startovoe_znachenie;
 	int summ_1;
 	int summ_2;
-	cout << "Ïðîãðàììà îïðåäåëÿþùàÿ ÿâëÿåòñÿ ëè áèëåò ñ÷àñòëèâûì èëè íåò.\n";
+	cout << "ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑŽÑ‰Ð°Ñ ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð»Ð¸ Ð±Ð¸Ð»ÐµÑ‚ ÑÑ‡Ð°ÑÑ‚Ð»Ð¸Ð²Ñ‹Ð¼ Ð¸Ð»Ð¸ Ð½ÐµÑ‚.\n";
 	do {
-		cout << "Ââåäèòå íîìåð áèëåòà â êëàâèàòóðû: "; cin >> chislo; cout << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð±Ð¸Ð»ÐµÑ‚Ð° Ð² ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñ‹: "; cin >> chislo; cout << endl;
 		startovoe_znachenie = chislo;
 		counter = 100000;
 		sotni_tisyach = chislo / counter;
@@ -86,9 +86,9 @@ void main()
 		edinica = chislo;
 		summ_1 = edinica + desyatki + sotni;
 		summ_2 = tisyachi + desyatki_tisyach + sotni_tisyach;
-		if (summ_1 == summ_2) cout << "Âàø áèëåò " << startovoe_znachenie << " ÿâëÿåòñÿ ñ÷àñòëèâûì!\n";
-		else cout << "Âàø áèëåò " << startovoe_znachenie << " ÿâëÿåòñÿ îáû÷íûì.\n";
-		cout << "Âû õîòèòå ïîâòîðèòü? Íàæìèòå 0\n"; cin >> utility;
+		if (summ_1 == summ_2) cout << "Ð’Ð°Ñˆ Ð±Ð¸Ð»ÐµÑ‚ " << startovoe_znachenie << " ÑÐ²Ð»ÑÐµÑ‚ÑÑ ÑÑ‡Ð°ÑÑ‚Ð»Ð¸Ð²Ñ‹Ð¼!\n";
+		else cout << "Ð’Ð°Ñˆ Ð±Ð¸Ð»ÐµÑ‚ " << startovoe_znachenie << " ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð¾Ð±Ñ‹Ñ‡Ð½Ñ‹Ð¼.\n";
+		cout << "Ð’Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ? ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ 0\n"; cin >> utility;
 	} while (utility==0);
 #endif //TASK_2
 #ifdef TASK_3
@@ -96,24 +96,24 @@ void main()
 	char brukva;
 	i = 0;
 	cout << "\t\t\t3Dshooter\n";
-	cout << "Ââåäèòå çíà÷åíèå ñ êëàâèàòóðû: \n";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñ‹: \n";
 		for (i; i != 50; i++)
 		{
 			brukva = _getch();
 			switch (brukva)
 			{
-			case (119): cout << "Âû äâèæåòåñü âïåðåä.\n"; break;
-			case(97): cout << "Âû äâèæåòåñü âëåâî.\n"; break;
-			case(115): cout << "Âû äâèæåòåñü íàçàä.\n"; break;
-			case(100): cout << "Âû äâèæåòåñü âïðàâî.\n"; break;
-			case(32):cout << "Âû ïðûãàåòå.\n"; break;
-			case(13):cout << "Âû ñòðåëÿåòå\n"; break;
-			case(114):cout << "Âû ïåðåçàðÿæàåòåñü.\n"; break;
-			case(101):cout << "Âû ïîäáèðàåòå íåèçâåñòíûé ïðåäìåò.\n"; break;
-			default:cout << "×òî âû õîòèòå ñäåëàòü?\n"; break;
+			case (119): cout << "Ð’Ñ‹ Ð´Ð²Ð¸Ð¶ÐµÑ‚ÐµÑÑŒ Ð²Ð¿ÐµÑ€ÐµÐ´.\n"; break;
+			case(97): cout << "Ð’Ñ‹ Ð´Ð²Ð¸Ð¶ÐµÑ‚ÐµÑÑŒ Ð²Ð»ÐµÐ²Ð¾.\n"; break;
+			case(115): cout << "Ð’Ñ‹ Ð´Ð²Ð¸Ð¶ÐµÑ‚ÐµÑÑŒ Ð½Ð°Ð·Ð°Ð´.\n"; break;
+			case(100): cout << "Ð’Ñ‹ Ð´Ð²Ð¸Ð¶ÐµÑ‚ÐµÑÑŒ Ð²Ð¿Ñ€Ð°Ð²Ð¾.\n"; break;
+			case(32):cout << "Ð’Ñ‹ Ð¿Ñ€Ñ‹Ð³Ð°ÐµÑ‚Ðµ.\n"; break;
+			case(13):cout << "Ð’Ñ‹ ÑÑ‚Ñ€ÐµÐ»ÑÐµÑ‚Ðµ\n"; break;
+			case(114):cout << "Ð’Ñ‹ Ð¿ÐµÑ€ÐµÐ·Ð°Ñ€ÑÐ¶Ð°ÐµÑ‚ÐµÑÑŒ.\n"; break;
+			case(101):cout << "Ð’Ñ‹ Ð¿Ð¾Ð´Ð±Ð¸Ñ€Ð°ÐµÑ‚Ðµ Ð½ÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ñ‹Ð¹ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚.\n"; break;
+			default:cout << "Ð§Ñ‚Ð¾ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÐ´ÐµÐ»Ð°Ñ‚ÑŒ?\n"; break;
 			}
 		}
-	cout << "Âû âûäîõëèñü è óñíóëè âî âðåìÿ áèòâû\n ";
-	cout << "\t\t\t\t\t\t\tÂÛ ÏÎÃÈÁËÈ \n";
+	cout << "Ð’Ñ‹ Ð²Ñ‹Ð´Ð¾Ñ…Ð»Ð¸ÑÑŒ Ð¸ ÑƒÑÐ½ÑƒÐ»Ð¸ Ð²Ð¾ Ð²Ñ€ÐµÐ¼Ñ Ð±Ð¸Ñ‚Ð²Ñ‹\n ";
+	cout << "\t\t\t\t\t\t\tÐ’Ð« ÐŸÐžÐ“Ð˜Ð‘Ð›Ð˜ \n";
 #endif //TASK_3
 }

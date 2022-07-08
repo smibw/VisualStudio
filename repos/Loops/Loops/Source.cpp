@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <conio.h>
 using namespace std;
 //#define PALINDROME
@@ -21,7 +21,7 @@ void main()
 	int number;
 	int reverse;
 	reverse = 0;
-	cout << "Íàáåðèòå ÷èñëî: "; cin >> number;
+	cout << "ÐÐ°Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾: "; cin >> number;
 	int buffer = number;
 	do
 	{
@@ -31,17 +31,17 @@ void main()
 	} while (buffer != 0);
 	if (number == reverse)
 	{
-		cout << "×èñëî - ïàëèíäðîì."; cout << number; cout << reverse;
+		cout << "Ð§Ð¸ÑÐ»Ð¾ - Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼."; cout << number; cout << reverse;
 	}
 	else
 	{
-		cout << "×èñëî - íå ïàëèíäðîì."; cout << number; cout << reverse;
+		cout << "Ð§Ð¸ÑÐ»Ð¾ - Ð½Ðµ Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼."; cout << number; cout << reverse;
 	}
 #endif // PALINDROME
 #ifdef HAPPYBILET
 	int b, i, l, e, t, z, summ_1, summ_2;
-	cout << "Ââîäèòå íîìåð áèëåòà ïî îäíîé öèôðå. Ïîñëå êàæäîé ââåäåííîé öèôðû íàæèìàéòå Enter.\n";
-	cout << "Ââåäèòå íîìåð áèëåòà: "; cin >> b>> i>> l>> e >> t >> z;
+	cout << "Ð’Ð²Ð¾Ð´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð±Ð¸Ð»ÐµÑ‚Ð° Ð¿Ð¾ Ð¾Ð´Ð½Ð¾Ð¹ Ñ†Ð¸Ñ„Ñ€Ðµ. ÐŸÐ¾ÑÐ»Ðµ ÐºÐ°Ð¶Ð´Ð¾Ð¹ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ð¾Ð¹ Ñ†Ð¸Ñ„Ñ€Ñ‹ Ð½Ð°Ð¶Ð¸Ð¼Ð°Ð¹Ñ‚Ðµ Enter.\n";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð±Ð¸Ð»ÐµÑ‚Ð°: "; cin >> b>> i>> l>> e >> t >> z;
 	cout << b << i << l << e << t << z << endl;
 	summ_1 = b + i + l;
 	summ_2 = e + t + z;
@@ -60,28 +60,28 @@ void main()
 		switch (key)
 		{
 		case -32:cout << " "; break;
-		case 119:cout << " Âïåðåä"<< endl; break;
-		case 87:cout << " Âïåðåä" << endl; break;
-		case UP_ARROW:cout << "Âïåðåä" << endl; break;
-		case 115:cout << " Íàçàä" << endl; break;
-		case 83:cout << " Íàçàä" << endl; break;
-		case DOWN_ARROW:cout << "Íàçàä" << endl; break;
-		case 100:cout << " Âïðàâî" << endl; break;
-		case RIGHT_ARROW:cout << "Âïðàâî" << endl; break;
-		case 68:cout << " Âïðàâî" << endl; break;
-		case 97: cout << " Âëåâî" << endl; break;
-		case LEFT_ARROW: cout << "Âëåâî" << endl; break;
-		case 65:cout << " Âëåâî" << endl; break;
-		case Enter:cout << " Îãîíü!" << endl; break;
-		case 101:cout << " Ïîäíÿòü ïðåäìåò" << endl; break;
-		case 69:cout << " Ïîäíÿòü ïðåäìåò" << endl; break;
-		case 32:cout << " Ïðûæîê" << endl; break;
-		case Escape:cout << " Âûõîä" << endl; break;
-		default :cout << " Error:äåéñòâèå íå ðàñïîçíàíî" << endl;
+		case 119:cout << " Ð’Ð¿ÐµÑ€ÐµÐ´"<< endl; break;
+		case 87:cout << " Ð’Ð¿ÐµÑ€ÐµÐ´" << endl; break;
+		case UP_ARROW:cout << "Ð’Ð¿ÐµÑ€ÐµÐ´" << endl; break;
+		case 115:cout << " ÐÐ°Ð·Ð°Ð´" << endl; break;
+		case 83:cout << " ÐÐ°Ð·Ð°Ð´" << endl; break;
+		case DOWN_ARROW:cout << "ÐÐ°Ð·Ð°Ð´" << endl; break;
+		case 100:cout << " Ð’Ð¿Ñ€Ð°Ð²Ð¾" << endl; break;
+		case RIGHT_ARROW:cout << "Ð’Ð¿Ñ€Ð°Ð²Ð¾" << endl; break;
+		case 68:cout << " Ð’Ð¿Ñ€Ð°Ð²Ð¾" << endl; break;
+		case 97: cout << " Ð’Ð»ÐµÐ²Ð¾" << endl; break;
+		case LEFT_ARROW: cout << "Ð’Ð»ÐµÐ²Ð¾" << endl; break;
+		case 65:cout << " Ð’Ð»ÐµÐ²Ð¾" << endl; break;
+		case Enter:cout << " ÐžÐ³Ð¾Ð½ÑŒ!" << endl; break;
+		case 101:cout << " ÐŸÐ¾Ð´Ð½ÑÑ‚ÑŒ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚" << endl; break;
+		case 69:cout << " ÐŸÐ¾Ð´Ð½ÑÑ‚ÑŒ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚" << endl; break;
+		case 32:cout << " ÐŸÑ€Ñ‹Ð¶Ð¾Ðº" << endl; break;
+		case Escape:cout << " Ð’Ñ‹Ñ…Ð¾Ð´" << endl; break;
+		default :cout << " Error:Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ð½Ðµ Ñ€Ð°ÑÐ¿Ð¾Ð·Ð½Ð°Ð½Ð¾" << endl;
 		}
 
 	} while (key != 27);
-	cout << "Âû ïîêèíóëè áèòâó." << endl;
+	cout << "Ð’Ñ‹ Ð¿Ð¾ÐºÐ¸Ð½ÑƒÐ»Ð¸ Ð±Ð¸Ñ‚Ð²Ñƒ." << endl;
 #endif
 #ifdef SHOOTER_2
 	char key;
@@ -89,14 +89,14 @@ void main()
 	{
 		key = _getch();
 		//cout << (int)key << "\t" << key << endl;
-		if (key == 'w' || key == 'W' || key == UP_ARROW)	cout << "Âïåðåä" << endl;
-		else if (key == 's' || key == 'S' || key == DOWN_ARROW)	cout << "Íàçàä" << endl;
-		else if (key == 'a' || key == 'A' || key == LEFT_ARROW)	cout << "Âëåâî" << endl;
-		else if (key == 'd' || key == 'D' || key == RIGHT_ARROW) cout << "Âïðàâî" << endl;
-		else if (key == ' ')cout << "Ïðûæîê" << endl;
-		else if (key == Enter)cout << "Îãîíü" << endl;
-		else if (key == Escape)cout << "Âûõîä" << endl;
-		else if (key != -32)cout << "Error: íå ïîíèìàþ, ÷òî âû õîòèòå ñäåëàòü..." << endl;
+		if (key == 'w' || key == 'W' || key == UP_ARROW)	cout << "Ð’Ð¿ÐµÑ€ÐµÐ´" << endl;
+		else if (key == 's' || key == 'S' || key == DOWN_ARROW)	cout << "ÐÐ°Ð·Ð°Ð´" << endl;
+		else if (key == 'a' || key == 'A' || key == LEFT_ARROW)	cout << "Ð’Ð»ÐµÐ²Ð¾" << endl;
+		else if (key == 'd' || key == 'D' || key == RIGHT_ARROW) cout << "Ð’Ð¿Ñ€Ð°Ð²Ð¾" << endl;
+		else if (key == ' ')cout << "ÐŸÑ€Ñ‹Ð¶Ð¾Ðº" << endl;
+		else if (key == Enter)cout << "ÐžÐ³Ð¾Ð½ÑŒ" << endl;
+		else if (key == Escape)cout << "Ð’Ñ‹Ñ…Ð¾Ð´" << endl;
+		else if (key != -32)cout << "Error: Ð½Ðµ Ð¿Ð¾Ð½Ð¸Ð¼Ð°ÑŽ, Ñ‡Ñ‚Ð¾ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÐ´ÐµÐ»Ð°Ñ‚ÑŒ..." << endl;
 	} while (key != Escape);
 #endif // SHOOTER_2
 
