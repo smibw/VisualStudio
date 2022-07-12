@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 using std::cout;
@@ -19,15 +19,15 @@ void main()
 	int	number;
 #ifdef FACTORIAL
 	int factorial = 1;
-	std::cout << "Ââåäèòå ÷èñëî:"; std::cin >> number;
-	std::cout << "Ôàêòîğèàë ÷èñëà = " << Factorial(factorial, number);
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾:"; std::cin >> number;
+	std::cout << "Ğ¤Ğ°ĞºÑ‚Ğ¾Ñ€Ğ¸Ğ°Ğ» Ñ‡Ğ¸ÑĞ»Ğ° = " << Factorial(factorial, number);
 #endif // FACTORIAL
 
 #ifdef DEGREE
 	int x = 0;
-	std::cout << "Ââåäèòå ÷èñëî: "; std::cin >> number;
-	std::cout << "Ââåäèòå ñòåïåíü ÷èñëà: "; std::cin >> x;
-	std::cout << "Ñòåïåíü ÷èñëà = " << Degree(number, x);
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾: "; std::cin >> number;
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ÑÑ‚ĞµĞ¿ĞµĞ½ÑŒ Ñ‡Ğ¸ÑĞ»Ğ°: "; std::cin >> x;
+	std::cout << "Ğ¡Ñ‚ĞµĞ¿ĞµĞ½ÑŒ Ñ‡Ğ¸ÑĞ»Ğ° = " << Degree(number, x);
 #endif // DEGREE
 
 }
