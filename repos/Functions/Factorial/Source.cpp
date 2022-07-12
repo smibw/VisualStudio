@@ -7,8 +7,8 @@ using std::endl;
 
 #define tab "\t"
 #define delimiter "\n------------\n"
-//#define FACTORIAL
-#define DEGREE
+#define FACTORIAL
+//#define DEGREE
 
 int Factorial(int factorial, int number);
 int Degree(int number, int x);
