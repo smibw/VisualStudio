@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 using std::cout;
 using std::cin;
@@ -21,13 +21,13 @@ void main()
 	FillArray(arr, n);
 	PrintArray(arr, n);
 	std::cout<<delimiter;
-	std::cout<<"Ñóììà âñåõ ýëåìåíòîâ ìàññèâà = "<<SumArray(arr, n)<<std::endl;
+	std::cout<<"Ð¡ÑƒÐ¼Ð¼Ð° Ð²ÑÐµÑ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð° = "<<SumArray(arr, n)<<std::endl;
 	std::cout<<delimiter;
-	std::cout << "Ñðåäíåå-àðèôìåòè÷åñêîå ýëåìåíòîâ ìàññèâà = " << AvgArray(arr, n) << std::endl;
+	std::cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ-Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð° = " << AvgArray(arr, n) << std::endl;
 	std::cout<<delimiter;
-	std::cout << "Ìèíèìàëüíîå çíà÷åíèå ýëåìåíòà â ìàññèâå = " << MinValueIn(arr, n) << std::endl;
+	std::cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ = " << MinValueIn(arr, n) << std::endl;
 	std::cout<<delimiter;
-	std::cout << "Ìàêñèìàëüíîå çíà÷åíèå ýëåìåíòà â ìàññèâå = " << MaxValueIn(arr, n) << std::endl;
+	std::cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ = " << MaxValueIn(arr, n) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(arr, n);
 	PrintArray(arr, n);
@@ -87,7 +87,7 @@ int MaxValueIn(int arr[], const int n)
 void ShiftLeft(int arr[], const int n)
 {
 	int shift;
-	std::cout << "Ââåäèòå çíà÷åíèå ñäâèãà: "; std::cin >> shift;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÐ´Ð²Ð¸Ð³Ð°: "; std::cin >> shift;
 	for (int i = 0; i < shift; i++)
 	{
 		int buffer = arr[0];
@@ -101,7 +101,7 @@ void ShiftLeft(int arr[], const int n)
 void ShiftRight(int arr[], const int n)
 {
 	int shift;
-	std::cout << "Ââåäèòå çíà÷åíèå ñäâèãà: ";std::cin>>shift;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÐ´Ð²Ð¸Ð³Ð°: ";std::cin>>shift;
 	for (int i = 0; i < shift; i++)
 	{
 		int buffer = arr[n - 1];
