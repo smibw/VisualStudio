@@ -1,0 +1,7 @@
+﻿Build started...
+1>------ Build started: Project: FunctionsArraysSort, Configuration: Debug x64 ------
+1>Source.cpp
+1>C:\Users\User\source\repos\Functions\FunctionsArraysSort\Source.cpp(17,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+1>FunctionsArraysSort.vcxproj -> C:\Users\User\source\repos\Functions\x64\Debug\FunctionsArraysSort.exe
+1>Done building project "FunctionsArraysSort.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

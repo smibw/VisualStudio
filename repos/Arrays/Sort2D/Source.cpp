@@ -1,13 +1,11 @@
 #include <iostream>
 #include <ctime>
-
 using namespace std;
 using std::cout;
 using std::cin;
 using std::endl;
-
 #define tab "\t"
-#define determination "\n-----------------------\n"
+#define delimiter "---------------------------------------\n"
 
 void main()
 {
@@ -21,33 +19,47 @@ void main()
 	{
 		for (int j = 0; j < y; j++)
 		{
-			A[i][j] = rand() % 10;
+			A[i][j] = rand() % 100;
 		}
 	}
-
+	std::cout << delimiter;
 	for (int i = 0; i < x; i++)
 	{
 		for (int j = 0; j < y; j++)
 		{
-			std::cout<<A[i][j]<<tab;
+			std::cout << A[i][j] << tab;
 		}
 		std::cout << endl;
 	}
-	std::cout << determination;
-	 int min = A[0][0];
-	 int buffer = A[0][0];
-	 int buffer_1 = 0;
-	for (int i = 0; i < x; i++)
+	std::cout << delimiter;
+	int buffer = 0;
+	for (int l = 0; l < y; l++)
 	{
-		for (int j = 0; j < y; j++)
+
+	for (int k = 0; k < x; k++)
+	{
+		for (int i = 0; i < x-1; i++)
 		{
-			if (A[i][j] < min) min = A[i][j];
-			if (A[i][j] > max) max = A[i][j];
-			buffer = A[0][0];
-			buffer_1 = A[3][5];
-			A[0][0] = min;
-			A[3][5] = max;
+			for (int j = 0; j < y-1; j++)
+			{
+				if (A[k][j] > A[k][j+1])
+				{
+					buffer = A[k][j];
+					A[k][j] = A[k][j+1];
+					A[k][j+1] = buffer;
+				}
+			}
+			for (int j = 0; j < y - 1; j++)
+			{
+				if (A[i][j] > A[i + 1][j])
+				{
+					buffer = A[i][j];
+					A[i][j] = A[i+1][j];
+					A[i+1][j] = buffer;
+				}
+			}
 		}
+	}
 	}
 	for (int i = 0; i < x; i++)
 	{
@@ -57,5 +69,5 @@ void main()
 		}
 		std::cout << endl;
 	}
-	std::cout << min << tab << max;
+	std::cout << delimiter;
 }

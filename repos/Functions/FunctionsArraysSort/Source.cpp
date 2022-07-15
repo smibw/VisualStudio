@@ -62,9 +62,7 @@ int SumArray(int arr[], const int n)
 }
 double AvgArray(int arr[], const int n)
 {
-	double avg = 0;
-	avg = (double)SumArray(arr, n) / n;
-	return avg;
+	return (double)SumArray(arr, n) / n;
 }
 int MinValueIn(int arr[], const int n)
 {
