@@ -5,14 +5,14 @@ using std::cin;
 using std::endl;
 #define tab "\t"
 #define delimiter "------------------------------------\n"
-//#define INT
+#define INT
 //#define FLOAT
 //#define DOUBLE
 //#define CHAR
-#define INT2D
-#define FLOAT2D
-#define DOUBLE2D
-#define CHAR2D
+//#define INT2D
+//#define FLOAT2D
+//#define DOUBLE2D
+//#define CHAR2D
 const int x = 3;
 const int y = 4;
 void FillRand(int arr[], const int n);
