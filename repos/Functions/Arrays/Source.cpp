@@ -1,8 +1,4 @@
-﻿#include <iostream>
-using namespace std;
-using std::cout;
-using std::cin;
-using std::endl;
+﻿#include"stdafx.h"
 #define tab "\t";
 #define delimiter "-----------------------------------------------------------\n"
 void PrintArray(int arr[], const int n);
