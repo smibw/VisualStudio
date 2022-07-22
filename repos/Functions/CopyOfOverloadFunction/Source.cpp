@@ -1,4 +1,4 @@
-#include"stdfxa.h"
+п»ї#include"stdfxa.h"
 #include"Constant.h"
 #define INT
 #define FLOAT
@@ -18,7 +18,7 @@
 #include"Statistics.cpp"
 #include"Shift.h"
 #include"Shift.cpp"
-//У меня пока не получилось отсортировать двумерные массивы.
+//РЈ РјРµРЅСЏ РїРѕРєР° РЅРµ РїРѕР»СѓС‡РёР»РѕСЃСЊ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ РґРІСѓРјРµСЂРЅС‹Рµ РјР°СЃСЃРёРІС‹.
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -27,21 +27,21 @@ void main()
 	int arr[n];
 	FillRand(arr, n);
 	std::cout << delimiter;
-	std::cout << "Работа с массивом с int заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РјР°СЃСЃРёРІРѕРј СЃ int Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	Print(arr, n);
 	std::cout << delimiter;
-	std::cout << "Сортируем массив." << std::endl;
+	std::cout << "РЎРѕСЂС‚РёСЂСѓРµРј РјР°СЃСЃРёРІ." << std::endl;
 	Sort(arr, n);
 	std::cout << delimiter;
 	Print(arr, n);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(arr, n) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(arr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(arr, n) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(arr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(arr, n) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(arr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(arr, n) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(arr, n) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(arr, n);
 	Print(arr, n);
@@ -56,23 +56,23 @@ void main()
 #ifdef FLOAT
 
 	std::cout << delimiter;
-	std::cout << "Работа с массивом с float заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РјР°СЃСЃРёРІРѕРј СЃ float Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	float brr[n];
 	FillRand(brr, n);
 	Print(brr, n);
 	std::cout << delimiter;
-	std::cout << "Сортируем массив." << std::endl;
+	std::cout << "РЎРѕСЂС‚РёСЂСѓРµРј РјР°СЃСЃРёРІ." << std::endl;
 	Sort(brr, n);
 	std::cout << delimiter;
 	Print(brr, n);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(brr, n) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(brr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(brr, n) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(brr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(brr, n) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(brr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(brr, n) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(brr, n) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(brr, n);
 	Print(brr, n);
@@ -86,23 +86,23 @@ void main()
 
 #ifdef DOUBLE
 	std::cout << delimiter;
-	std::cout << "Работа с массивом с double заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РјР°СЃСЃРёРІРѕРј СЃ double Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	double crr[n];
 	FillRand(crr, n);
 	Print(crr, n);
 	std::cout << delimiter;
-	std::cout << "Сортируем массив." << std::endl;
+	std::cout << "РЎРѕСЂС‚РёСЂСѓРµРј РјР°СЃСЃРёРІ." << std::endl;
 	Sort(crr, n);
 	std::cout << delimiter;
 	Print(crr, n);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(crr, n) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(crr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(crr, n) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(crr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(crr, n) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(crr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(crr, n) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(crr, n) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(crr, n);
 	Print(crr, n);
@@ -116,22 +116,22 @@ void main()
 
 #ifdef CHAR
 	std::cout << delimiter;
-	std::cout << "Работа с массивом с char заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РјР°СЃСЃРёРІРѕРј СЃ char Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	char drr[n];
 	FillRand(drr, n);
 	Print(drr, n);
 	std::cout << delimiter;
-	std::cout << "Сортируем массив." << std::endl;
+	std::cout << "РЎРѕСЂС‚РёСЂСѓРµРј РјР°СЃСЃРёРІ." << std::endl;
 	Sort(drr, n);
 	std::cout << delimiter;
 	Print(drr, n);
-	std::cout << "Сумма элементов массива = " << Sum(drr, n) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(drr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(drr, n) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(drr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(drr, n) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(drr, n) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(drr, n) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(drr, n) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(drr, n);
 	Print(drr, n);
@@ -147,17 +147,17 @@ void main()
 	int arr_2[x][y]{};
 	FillRand(arr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Работа с двумерным массивом с int заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РґРІСѓРјРµСЂРЅС‹Рј РјР°СЃСЃРёРІРѕРј СЃ int Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	std::cout << delimiter;
 	Print(arr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(arr_2, x, y) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(arr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(arr_2, x, y) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(arr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(arr_2, x, y) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(arr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(arr_2, x, y) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(arr_2, x, y) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(arr_2, x, y);
 	Print(arr_2, x, y);
@@ -173,17 +173,17 @@ void main()
 	float brr_2[x][y]{};
 	FillRand(brr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Работа с двумерным массивом с float заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РґРІСѓРјРµСЂРЅС‹Рј РјР°СЃСЃРёРІРѕРј СЃ float Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	std::cout << delimiter;
 	Print(brr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(brr_2, x, y) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(brr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(brr_2, x, y) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(brr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(brr_2, x, y) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(brr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(brr_2, x, y) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(brr_2, x, y) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(brr_2, x, y);
 	Print(brr_2, x, y);
@@ -199,17 +199,17 @@ void main()
 	double crr_2[x][y]{};
 	FillRand(crr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Работа с двумерным массивом с double заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РґРІСѓРјРµСЂРЅС‹Рј РјР°СЃСЃРёРІРѕРј СЃ double Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	std::cout << delimiter;
 	Print(crr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(crr_2, x, y) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(crr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(crr_2, x, y) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(crr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(crr_2, x, y) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(crr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(crr_2, x, y) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(crr_2, x, y) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(crr_2, x, y);
 	Print(crr_2, x, y);
@@ -225,17 +225,17 @@ void main()
 	char drr_2[x][y];
 	FillRand(drr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Работа с двумерным массивом с char заполнением." << std::endl;
+	std::cout << "Р Р°Р±РѕС‚Р° СЃ РґРІСѓРјРµСЂРЅС‹Рј РјР°СЃСЃРёРІРѕРј СЃ char Р·Р°РїРѕР»РЅРµРЅРёРµРј." << std::endl;
 	std::cout << delimiter;
 	Print(drr_2, x, y);
 	std::cout << delimiter;
-	std::cout << "Сумма элементов массива = " << Sum(drr_2, x, y) << std::endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° = " << Sum(drr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Среднее-арифметическое значение массива = " << Avg(drr_2, x, y) << std::endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << Avg(drr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Минимальное значение элемента массива = " << minValueIn(drr_2, x, y) << std::endl;
+	std::cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << minValueIn(drr_2, x, y) << std::endl;
 	std::cout << delimiter;
-	std::cout << "Максимальное значение элемента массива = " << maxValueIn(drr_2, x, y) << std::endl;
+	std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° = " << maxValueIn(drr_2, x, y) << std::endl;
 	std::cout << delimiter;
 	ShiftLeft(drr_2, x, y);
 	Print(drr_2, x, y);
