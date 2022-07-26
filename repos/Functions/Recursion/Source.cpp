@@ -5,14 +5,37 @@ using std::cin;
 using std::endl;
 #define tab "\t"
 #define delimiter "--------------------\n"
+//#define MIRROR_ELEVATOR
+#define COOL_ELEVATOR
+void MirrorElevator(int x);
 int elevator(int floor, int chose);
 int main()
 {
 	setlocale(LC_ALL, "");
+#ifdef MIRROR_ELEVATOR
+	int x;
+	std::cout << "Введите этаж: "; std::cin >> x;
+	MirrorElevator(x);
+#endif // MIRROR_ELEVATOR
+
+#ifdef COOL_ELEVATOR
 	int floor = 0;
-	int chose ;
+	int chose;
 	std::cout << "Выберите номер этажа: " << std::endl;  std::cin >> chose;
-	elevator(floor,chose);
+	elevator(floor, chose);
+#endif // COOL_ELEVATOR
+
+}
+void MirrorElevator(int x)
+{
+	if (x == 0)
+	{
+		std::cout << "Вы в подвале."<<std::endl;
+		return;
+	}
+	std::cout << "Вы на " << x << " этаже \n";
+	MirrorElevator(x - 1);
+	std::cout << "Вы на " << x << " этаже \n";
 }
 int elevator(int floor, int chose)
 {
