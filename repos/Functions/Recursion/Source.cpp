@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 using std::cout;
 using std::cin;
@@ -11,27 +11,27 @@ int main()
 	setlocale(LC_ALL, "");
 	int floor = 0;
 	int chose ;
-	std::cout << "Âûáåðèòå íîìåð ýòàæà: " << std::endl;  std::cin >> chose;
+	std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚Ð°Ð¶Ð°: " << std::endl;  std::cin >> chose;
 	elevator(floor,chose);
 }
 int elevator(int floor, int chose)
 {
 	if (floor == 0)
 	{
-		std::cout << "Âû â ïîäâàëå." << std::endl;
+		std::cout << "Ð’Ñ‹ Ð² Ð¿Ð¾Ð´Ð²Ð°Ð»Ðµ." << std::endl;
 		return elevator(floor+1,chose);
 	}
 	else if (floor < 50&&floor-1!=chose)
 	{
-		std::cout << "Âû ïîäíèìàåòåñü." << std::endl;
-		std::cout << "Âû äîñòèãëè ýòàæà N" << floor << std::endl;
-		if (chose == floor) std::cout << "Âû äîñòèãëè íóæíîãî ýòàæà, âûõîäèòå." << std::endl;
+		std::cout << "Ð’Ñ‹ Ð¿Ð¾Ð´Ð½Ð¸Ð¼Ð°ÐµÑ‚ÐµÑÑŒ." << std::endl;
+		std::cout << "Ð’Ñ‹ Ð´Ð¾ÑÑ‚Ð¸Ð³Ð»Ð¸ ÑÑ‚Ð°Ð¶Ð° N" << floor << std::endl;
+		if (chose == floor) std::cout << "Ð’Ñ‹ Ð´Ð¾ÑÑ‚Ð¸Ð³Ð»Ð¸ Ð½ÑƒÐ¶Ð½Ð¾Ð³Ð¾ ÑÑ‚Ð°Ð¶Ð°, Ð²Ñ‹Ñ…Ð¾Ð´Ð¸Ñ‚Ðµ." << std::endl;
 		return elevator(floor + 1,chose);
 	}
 	else if(floor==50)
 	{
-		std::cout << "Âû ïîäíèìàåòåñü." << std::endl;
-		std::cout << "Âû äîñòèãëè êðûøè." << std::endl;
+		std::cout << "Ð’Ñ‹ Ð¿Ð¾Ð´Ð½Ð¸Ð¼Ð°ÐµÑ‚ÐµÑÑŒ." << std::endl;
+		std::cout << "Ð’Ñ‹ Ð´Ð¾ÑÑ‚Ð¸Ð³Ð»Ð¸ ÐºÑ€Ñ‹ÑˆÐ¸." << std::endl;
 		return 0;
 	}
 }
