@@ -2,11 +2,11 @@
 #include "Fibonacii.h"
 int Fibonacii_limit(int number,int number2, int limit)
 {
-	if (number > limit)
+	if (number > limit||number2>limit)
 	{
 		return 0;
 	}
-	else if (number < limit)
+	else if (number < limit||number2<limit)
 	{
 		std::cout << number << tab << number2 << tab;
 		number += number2;
