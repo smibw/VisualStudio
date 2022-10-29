@@ -4,7 +4,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void Exchange(int a, int b);
+void Exchange(int& a, int& b);
 
 void main()
 {
@@ -16,7 +16,7 @@ void main()
 	std::cout << a << "\t" << b << std::endl;
 
 }
-void Exchange(int a, int b)
+void Exchange(int& a, int& b)
 {
 	std::cout << &a << "\t" << &b << std::endl;
 	int buffer = a;
