@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 using std::cin;
 using std::cout;
@@ -51,7 +51,7 @@ public:
 		this->denominator = 1;
 		cout << "DefConstructor:\t" << this << endl;
 	}
-	 explicit/*(çàïðåùàåò íåÿâíûå ïðåîáðàçîâàíèÿ òèïîâ)*/ Fraction(int integer)
+	 explicit/*(Ð·Ð°Ð¿Ñ€ÐµÑ‰Ð°ÐµÑ‚ Ð½ÐµÑÐ²Ð½Ñ‹Ðµ Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ñ Ñ‚Ð¸Ð¿Ð¾Ð²)*/ Fraction(int integer)
 	{
 		this->integer = integer;
 		this->numerator = 0;
@@ -345,11 +345,11 @@ void main()
 	/*
 	if (A == B)
 	{
-		cout << "Äðîáè ðàâíû"<<endl;
+		cout << "Ð”Ñ€Ð¾Ð±Ð¸ Ñ€Ð°Ð²Ð½Ñ‹"<<endl;
 	}
 	else
 	{
-		cout << "Äðîáè ðàçíûå"<<endl;
+		cout << "Ð”Ñ€Ð¾Ð±Ð¸ Ñ€Ð°Ð·Ð½Ñ‹Ðµ"<<endl;
 	}*/
 	//cout << (A == B) << endl;
 	cout << (Fraction(1, 2) <= Fraction(5, 10)) << endl;
@@ -357,8 +357,8 @@ void main()
 #endif // COMPARISON_OPERATORS_CHECK
 
 #ifdef TYPE_CONVERSION_BASICS
-	//(type)value// C-like notation(C- ïîäîáíàÿ ôîðìà çàïèñè)
-	//type(value) //Functional notation (Ôóíêöèîíàëüíàÿ ôîðìà çàïèñè(íàïîìèíàåò âûçîâ ôóíêöèè)) ïðè êîíâåðòàöèè âîçìîæíû ïîòåðè äàííûõ
+	//(type)value// C-like notation(C- Ð¿Ð¾Ð´Ð¾Ð±Ð½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð° Ð·Ð°Ð¿Ð¸ÑÐ¸)
+	//type(value) //Functional notation (Ð¤ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð° Ð·Ð°Ð¿Ð¸ÑÐ¸(Ð½Ð°Ð¿Ð¾Ð¼Ð¸Ð½Ð°ÐµÑ‚ Ð²Ñ‹Ð·Ð¾Ð² Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸)) Ð¿Ñ€Ð¸ ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð°Ñ†Ð¸Ð¸ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ñ‹ Ð¿Ð¾Ñ‚ÐµÑ€Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ñ…
 	int a = 2;
 	double b = 3;	//Conversion from less to more
 	int c = b;		//Conversion from more to less with no data loss
