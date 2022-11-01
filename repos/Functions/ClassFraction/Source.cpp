@@ -1,4 +1,6 @@
-﻿#include<iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#pragma warning (disable:4326)
+#include<iostream>
 using namespace std;
 using std::cin;
 using std::cout;
@@ -60,9 +62,11 @@ public:
 	}
 	 Fraction(double decimal)
 	 {
+		 decimal += 1e-10;
 		 integer = decimal;
 		 denominator = 1e+9;
 		 numerator = (decimal - integer) * denominator;
+		 reduce();
 		 cout << "DoubleConstractor:" << endl;
 	 }
 	Fraction(int numerator, int denominator)
@@ -202,6 +206,35 @@ ostream& operator<<(ostream& os, const Fraction& obj)
 	}
 	else if (obj.get_integer() == 0) os << 0;
 	return os;
+}
+istream& operator>>(istream& is,  Fraction& obj)
+{
+	const int SIZE = 256;
+	char buffer[SIZE]={};
+	cin.getline(buffer, SIZE);
+	char delimiters[] = "()/";
+	char* sz_number[3] = {};
+	int i = 0;
+	for (char* pch = strtok(buffer, delimiters); pch; pch = strtok(NULL, delimiters))
+	{
+		sz_number[i++] = pch;
+	}
+	obj = Fraction();
+	switch (i)
+	{
+	case 1: obj.set_integer(atoi(sz_number[0])); break;
+		//atoi() - ASCII-string to integer (преобразует строку в число)
+		//http://cplusplus.com/reference/cstdlib/atoi/
+	case 2:
+		obj.set_numerator(atoi(sz_number[0]));
+		obj.set_denominator(atoi(sz_number[1]));
+		break;
+	case 3:
+		obj.set_integer(atoi(sz_number[0]));
+		obj.set_numerator(atoi(sz_number[1]));
+		obj.set_denominator(atoi(sz_number[2]));
+	}
+	return is;
 }
 
 Fraction operator*(Fraction left, Fraction right)
@@ -405,5 +438,8 @@ void main()
 
 #endif // REDUCE_HOW
 
-
+	Fraction A;
+	cout << "Введите простую дробь: ";
+	cin >> A;
+	cout << A << endl;
 }
