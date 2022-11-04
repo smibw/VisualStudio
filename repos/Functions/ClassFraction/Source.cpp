@@ -211,28 +211,30 @@ istream& operator>>(istream& is,  Fraction& obj)
 {
 	const int SIZE = 256;
 	char buffer[SIZE]={};
-	cin.getline(buffer, SIZE);
-	char delimiters[] = "()/";
-	char* sz_number[3] = {};
+	is.getline(buffer, SIZE);
+	//is >> buffer;
+	char delimiters[] = "()/ ";
+	char number[3] = {};
 	int i = 0;
 	for (char* pch = strtok(buffer, delimiters); pch; pch = strtok(NULL, delimiters))
 	{
-		sz_number[i++] = pch;
+		number[i++]= atoi(pch);
+		if (i >= 3)break;
 	}
 	obj = Fraction();
 	switch (i)
 	{
-	case 1: obj.set_integer(atoi(sz_number[0])); break;
+	case 1: obj.set_integer(number[0]); break;
 		//atoi() - ASCII-string to integer (преобразует строку в число)
 		//http://cplusplus.com/reference/cstdlib/atoi/
 	case 2:
-		obj.set_numerator(atoi(sz_number[0]));
-		obj.set_denominator(atoi(sz_number[1]));
+		obj.set_numerator(number[0]);
+		obj.set_denominator(number[1]);
 		break;
 	case 3:
-		obj.set_integer(atoi(sz_number[0]));
-		obj.set_numerator(atoi(sz_number[1]));
-		obj.set_denominator(atoi(sz_number[2]));
+		obj.set_integer(number[0]);
+		obj.set_numerator(number[1]);
+		obj.set_denominator(number[2]);
 	}
 	return is;
 }

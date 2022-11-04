@@ -4,6 +4,9 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+class String;
+String operator+(const String& left, const String& right);
+
 class String
 {
 	size_t size;	//Размер строки в байтах
@@ -13,6 +16,11 @@ public:
 	{
 		return str;
 	}
+	 char* get_str()
+	{
+		return str;
+	}
+
 	int get_size()const
 	{
 		return size;
@@ -38,6 +46,15 @@ public:
 		for (int i = 0; i < size; i++)this->str[i] = other.str[i];
 		std::cout << "CopyConstructor:\t" << this << std::endl;
 	}
+	String (String&& other)
+	{
+		this->size = other.size;
+		this->str = other.str;
+		other.size = 0;
+		other.str = nullptr;
+		std::cout << "MoveConstructor: " <<this<< std::endl;
+
+	}
 	~String()
 	{
 		delete[] this->str;
@@ -54,7 +71,22 @@ public:
 		std::cout << "CopeAssignment:\t" << this << std::endl;
 		return *this;
 	}
-	const char& operator[](int i)const
+	String& operator= (String&& other)
+	{
+		if (this == &other) return *this;
+		delete[] this->str;
+		this->size = other.size;
+		this->str = other.str;
+		other.size = 0;
+		other.str = nullptr;
+		std::cout << "MoveAssignment:\t" << this << std::endl;
+		return *this;
+	}
+	String& operator+=(const String& other)
+	{
+		return *this=*this+other;
+	}
+	char operator[](int i)const
 	{
 		return str[i];
 	}
@@ -76,17 +108,20 @@ ostream& operator<<(ostream& os, const String& obj)
 
 String operator+(const String& left, const String& right)
 {
-	String answer(left.get_size() + right.get_size());
-	for (int i = 0; i < left.get_size(); i++)
-	{
-		answer[i] = left[i];
-	}
+	/*String cat(left.get_size() + right.get_size() - 1);
+	for (int i = 0; i < left.get_size(); i++)	
+		cat.get_str()[i] = left.get_str()[i];
 	for (int i = 0; i < right.get_size(); i++)
-	{
-		answer[i + left.get_size() -1] = right[i];
-	}
-	return answer;
+		cat.get_str()[i + left.get_size() - 1] = right.get_str()[i];
+		*/
+	String cat(left.get_size() + right.get_size());
+	for (int i = 0; i < left.get_size(); i++)
+		cat[i] = left[i];	
+	for (int i = 0; i < right.get_size(); i++)
+		cat[i + left.get_size() -1] = right[i];
+	return cat;
 }
+
 
 //#define CONSTRUCTOR_CHECK
 #define OPERATOR_PLUS_CHECK
@@ -117,7 +152,11 @@ void main()
 #ifdef OPERATOR_PLUS_CHECK
 	String str1 = "Hello";
 	String str2 = "World";
-	String str3 = str1 + str2;
-	cout << str3 << endl;
+	//String str3;
+	// str3 = str1 + str2;
+	//cout << str3 << endl;
+	str1 += str2;
+	std::cout << str1 << std::endl;
+
 #endif // OPERATOR_PLUS_CHECK
 }
