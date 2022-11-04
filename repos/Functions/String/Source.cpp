@@ -26,30 +26,30 @@ public:
 		return size;
 	}
 		//			Constructors:
-	explicit String(size_t size=80)
+	explicit String(size_t size = 80) :size(size), str(new char[size] {})
 	{
-		this->size = size;
-		this->str = new char[size] {};
+		//this->size = size;
+		//this->str = new char[size] {}; //Потери памяти!
 		std::cout << "DefConstructor:\t" << this << std::endl;
 	}
-	String(const char str[])
+	String(const char str[]) :size(strlen(str) + 1), str(new char[size] {})
 	{
-		this->size = strlen(str)+1;
-		this->str = new char[size] {};
+		//this->size = strlen(str)+1;
+		//this->str = new char[size] {};
 		for (int i = 0; i < size; i++)this->str[i] = str[i];
 		std::cout << "Constructor:\t" << std::endl;
 	}
-	String(const String& other)
+	String(const String& other) : size(other.size), str(new char[size] {})
 	{
-		this->size = other.size;
-		this->str = new char[size] {};
+		//this->size = other.size;
+		//this->str = new char[size] {};
 		for (int i = 0; i < size; i++)this->str[i] = other.str[i];
 		std::cout << "CopyConstructor:\t" << this << std::endl;
 	}
-	String (String&& other)
+	String (String&& other): size(other.size),str(other.str)
 	{
-		this->size = other.size;
-		this->str = other.str;
+		//this->size = other.size;
+		//this->str = other.str;
 		other.size = 0;
 		other.str = nullptr;
 		std::cout << "MoveConstructor: " <<this<< std::endl;
@@ -157,6 +157,10 @@ void main()
 	//cout << str3 << endl;
 	str1 += str2;
 	std::cout << str1 << std::endl;
+	String str4 = str1;
+	std::cout << str4 << std::endl;
 
 #endif // OPERATOR_PLUS_CHECK
+
+
 }
