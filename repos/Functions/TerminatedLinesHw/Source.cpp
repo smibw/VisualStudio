@@ -40,6 +40,7 @@ void main()
 	//std::cout << "Строка " << (is_bin_number(str) ? "" : "НЕ ") << "является двоичным числом" << std::endl;
 	//std::cout << bin_to_dec(str) << std::endl;
 	std::cout << "Строка " << (is_hex_number(str) ? "" : "НЕ ") << "является целым шестнадцатиричным числом" << std::endl;
+	std::cout << hex_to_dec(str) << std::endl;
 }
 void to_upper(char str[])
 {
@@ -211,7 +212,7 @@ bool is_hex_number(const char str[])
 	int size = strlen(buffer);
 	for (int i = 0; i < size; i++)
 	{
-		if (buffer[i] < 'A' || buffer[i] > 'F'|| buffer[i] < '1'|| buffer[i] > '9')
+		if (buffer[i] < 'A' && buffer[i] > 'F'|| buffer[i] < '1'&& buffer[i] > '9')
 		{
 			delete[] buffer;
 			return false;
@@ -221,6 +222,37 @@ bool is_hex_number(const char str[])
 	delete[] buffer;
 	return true;
 }
-/*
-int  hex_to_dec(char str[]);
-*/
+
+int  hex_to_dec(char str[])	
+{
+	int rez = 0;
+	int k=0;
+	for (int i = 0; str[i]; i++)
+	{
+		switch (toupper(str[i]))
+		{
+		case 'A': k = 10; break;
+		case 'B': k = 11; break;
+		case 'C': k = 12; break;
+		case 'D': k = 13; break;
+		case 'E': k = 14; break;
+		case 'F': k = 15; break;
+		case '1': k = 1; break;
+		case '2': k = 2; break;
+		case '3': k = 3; break;
+		case '4': k = 4; break;
+		case '5': k = 5; break;
+		case '6': k = 6; break;
+		case '7': k = 7; break;
+		case '8': k = 8; break;
+		case '9': k = 9; break;
+		case '0': k = 0; break;
+		}
+		int res = 1;
+		int x = 16;
+		int y = (strlen(str) - 1 - i);
+		for (int i = 1; i <= y; i++)	res *= x;
+		rez += k * res;
+	}
+	return rez;
+}
