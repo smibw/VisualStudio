@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include<Windows.h>
 using namespace std;
 using std::cout;
@@ -9,23 +9,23 @@ void remove_symbol(char str[], const char symbol);
 void remove_symbol_better(char str[]);
 void remove_symbol_for_bin(char str[]);
 
-void to_upper(char str[]);				//Переводит строку в верхний регистр
-void to_lower(char str[]);				//Переводит строку в нижний регистр
-void shrink(char str[]);				//Удаляет лишние пробелы из предложения
-bool is_palindrome(const char str[]);	//Проверяет, является ли строка палиндромом
-bool is_int_number(const char str[]);	//Проверяет, является ли строка целым десятичным числом
-int  to_int_number(char str[]);			//Если строка является целым десятичным числом, возвращает ее числовое значение
-bool is_bin_number(const char str[]);	//Проверяет, является ли строка двоичным числом
-int  bin_to_dec(char str[]);			//Если строка является двоичным числом, возвращает ее десятичное значение
-bool is_hex_number(const char str[]);	//Если строка является двоичным числом, возвращает ее десятичное значение
-int  hex_to_dec(char str[]);			//Если строка является шестнадцатеричным числом, возвращает ее десятичное значение
+void to_upper(char str[]);				//РџРµСЂРµРІРѕРґРёС‚ СЃС‚СЂРѕРєСѓ РІ РІРµСЂС…РЅРёР№ СЂРµРіРёСЃС‚СЂ
+void to_lower(char str[]);				//РџРµСЂРµРІРѕРґРёС‚ СЃС‚СЂРѕРєСѓ РІ РЅРёР¶РЅРёР№ СЂРµРіРёСЃС‚СЂ
+void shrink(char str[]);				//РЈРґР°Р»СЏРµС‚ Р»РёС€РЅРёРµ РїСЂРѕР±РµР»С‹ РёР· РїСЂРµРґР»РѕР¶РµРЅРёСЏ
+bool is_palindrome(const char str[]);	//РџСЂРѕРІРµСЂСЏРµС‚, СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЃС‚СЂРѕРєР° РїР°Р»РёРЅРґСЂРѕРјРѕРј
+bool is_int_number(const char str[]);	//РџСЂРѕРІРµСЂСЏРµС‚, СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЃС‚СЂРѕРєР° С†РµР»С‹Рј РґРµСЃСЏС‚РёС‡РЅС‹Рј С‡РёСЃР»РѕРј
+int  to_int_number(char str[]);			//Р•СЃР»Рё СЃС‚СЂРѕРєР° СЏРІР»СЏРµС‚СЃСЏ С†РµР»С‹Рј РґРµСЃСЏС‚РёС‡РЅС‹Рј С‡РёСЃР»РѕРј, РІРѕР·РІСЂР°С‰Р°РµС‚ РµРµ С‡РёСЃР»РѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ
+bool is_bin_number(const char str[]);	//РџСЂРѕРІРµСЂСЏРµС‚, СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЃС‚СЂРѕРєР° РґРІРѕРёС‡РЅС‹Рј С‡РёСЃР»РѕРј
+int  bin_to_dec(char str[]);			//Р•СЃР»Рё СЃС‚СЂРѕРєР° СЏРІР»СЏРµС‚СЃСЏ РґРІРѕРёС‡РЅС‹Рј С‡РёСЃР»РѕРј, РІРѕР·РІСЂР°С‰Р°РµС‚ РµРµ РґРµСЃСЏС‚РёС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
+bool is_hex_number(const char str[]);	//Р•СЃР»Рё СЃС‚СЂРѕРєР° СЏРІР»СЏРµС‚СЃСЏ РґРІРѕРёС‡РЅС‹Рј С‡РёСЃР»РѕРј, РІРѕР·РІСЂР°С‰Р°РµС‚ РµРµ РґРµСЃСЏС‚РёС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
+int  hex_to_dec(char str[]);			//Р•СЃР»Рё СЃС‚СЂРѕРєР° СЏРІР»СЏРµС‚СЃСЏ С€РµСЃС‚РЅР°РґС†Р°С‚РµСЂРёС‡РЅС‹Рј С‡РёСЃР»РѕРј, РІРѕР·РІСЂР°С‰Р°РµС‚ РµРµ РґРµСЃСЏС‚РёС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 
 void main()
 {
 	setlocale(LC_ALL, "");
 	const int SIZE = 50;
 	char str[SIZE] = {};
-	std::cout << "Введите текст." << std::endl;
+	std::cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚." << std::endl;
 	SetConsoleCP(1251);
 	cin.getline(str,SIZE);
 	//shrink(str);
@@ -34,26 +34,26 @@ void main()
 	//std::cout << str << std::endl;;
 	//to_lower(str);
 	//std::cout << str<<std::endl;
-	//std::cout << "Строка " << (is_palindrome(str) ? "" : "НЕ ") << "является палиндромом" << std::endl;
-	//std::cout << "Строка " << (is_int_number(str) ? "" : "НЕ ") << "является целым десятичным числом" << std::endl;
+	//std::cout << "РЎС‚СЂРѕРєР° " << (is_palindrome(str) ? "" : "РќР• ") << "СЏРІР»СЏРµС‚СЃСЏ РїР°Р»РёРЅРґСЂРѕРјРѕРј" << std::endl;
+	//std::cout << "РЎС‚СЂРѕРєР° " << (is_int_number(str) ? "" : "РќР• ") << "СЏРІР»СЏРµС‚СЃСЏ С†РµР»С‹Рј РґРµСЃСЏС‚РёС‡РЅС‹Рј С‡РёСЃР»РѕРј" << std::endl;
 	//std::cout<<to_int_number(str)<<std::endl; 
-	//std::cout << "Строка " << (is_bin_number(str) ? "" : "НЕ ") << "является двоичным числом" << std::endl;
+	//std::cout << "РЎС‚СЂРѕРєР° " << (is_bin_number(str) ? "" : "РќР• ") << "СЏРІР»СЏРµС‚СЃСЏ РґРІРѕРёС‡РЅС‹Рј С‡РёСЃР»РѕРј" << std::endl;
 	//std::cout << bin_to_dec(str) << std::endl;
-	std::cout << "Строка " << (is_hex_number(str) ? "" : "НЕ ") << "является целым шестнадцатиричным числом" << std::endl;
+	std::cout << "РЎС‚СЂРѕРєР° " << (is_hex_number(str) ? "" : "РќР• ") << "СЏРІР»СЏРµС‚СЃСЏ С†РµР»С‹Рј С€РµСЃС‚РЅР°РґС†Р°С‚РёСЂРёС‡РЅС‹Рј С‡РёСЃР»РѕРј" << std::endl;
 	std::cout << hex_to_dec(str) << std::endl;
 }
 void to_upper(char str[])
 {
 	for (int i = 0; str[i]; i++)
 	{
-		if (str[i] >= 'а' && str[i] <= 'я'|| str[i] >= 'a' && str[i] <= 'z') str[i] -= ' ';
+		if (str[i] >= 'Р°' && str[i] <= 'СЏ'|| str[i] >= 'a' && str[i] <= 'z') str[i] -= ' ';
 	}
 }
 void to_lower(char str[])
 {
 	for (int i = 0; str[i]; i++)
 	{
-		if (str[i] >= 'А' && str[i] <= 'Я' || str[i] >= 'A' && str[i] <= 'Z') str[i] += ' ';
+		if (str[i] >= 'Рђ' && str[i] <= 'РЇ' || str[i] >= 'A' && str[i] <= 'Z') str[i] += ' ';
 	}
 }
 void shrink(char str[])
