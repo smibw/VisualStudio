@@ -5,6 +5,10 @@ using std::cin;
 using std::endl;
 
 #define delimiter "\n------------------------------------------------\n"
+#define HUMAN_TAKE_PARAMETERS const std::string& last_name, const std::string& first_name,unsigned int age
+#define HUMAN_GIVE_PARAMETERS  last_name,first_name,age
+#define STUDENT_TAKE_PARAMETERS const std::string& speciality, const std::string& group, double rating, double attendance
+#define STUDENT_GIVE_PARAMETERS  speciality,  group, rating, attendance
 
 class Human
 {
@@ -23,10 +27,10 @@ public:
 	}
 	unsigned int get_age()const
 	{
-		return age;
+		return age; 
 	}
 	//		Constructors
-	Human(const std::string& last_name, const std::string& first_name,unsigned int age):last_name(last_name), first_name(first_name), age(age)
+	Human(HUMAN_TAKE_PARAMETERS):last_name(last_name),first_name(first_name),age(age)
 	{
 		std::cout << "HConstructor:\t" << this << std::endl;
 	}
@@ -81,11 +85,7 @@ public:
 		this->attendance = attendance;
 	}
 	//	Constructors:
-	Student
-	(
-		const std::string& last_name, const std::string& first_name, unsigned int age,
-		const std::string& speciality, const std::string& group, double rating, double attendance
-	):Human(last_name,first_name,age)
+	Student	(HUMAN_TAKE_PARAMETERS,STUDENT_TAKE_PARAMETERS):Human(HUMAN_GIVE_PARAMETERS)
 	{
 		this->speciality = speciality;
 		this->group = group;
@@ -126,11 +126,7 @@ public:
 		this->experience = experience;
 	}
 	//		Constructors:
-	Teacher
-	(
-		const std::string& last_name, const std::string& first_name, unsigned int age,
-		const std::string& specialty, unsigned int experience
-	) :Human(last_name, first_name, age)
+	Teacher	(HUMAN_TAKE_PARAMETERS,	const std::string& specialty, unsigned int experience) :Human(HUMAN_GIVE_PARAMETERS)
 	{
 		set_specialty(specialty);
 		set_experience(experience);
@@ -146,6 +142,57 @@ public:
 		Human::print();
 		std::cout << specialty << " " << experience << std::endl;
 	}
+}; 
+
+class Graduate :public Human
+{
+	std::string practice;
+	unsigned int grade;
+	std::string specialty;
+public:
+	const std::string& get_pracrice() const
+	{
+		return practice;
+	}
+	unsigned int get_grade()const
+	{
+		return grade;
+	}
+	const std::string& get_specialty()const
+	{
+		return specialty;
+	}
+	void set_practice(const std::string& practice)
+	{
+		this->practice = practice;
+	}
+	void set_grade(unsigned int grade)
+	{
+		this->grade = grade;
+	}
+	void set_specialty(const std::string& specialty)
+	{
+		this->specialty = specialty;
+	}
+	//		Constructors:
+	Graduate(HUMAN_TAKE_PARAMETERS, const std::string& practice, unsigned int grade, const std::string& specialty)
+		:Human(HUMAN_GIVE_PARAMETERS)
+	{
+		set_practice(practice);
+		set_grade(grade);
+		set_specialty(specialty);
+		std::cout << "GConstructor:\t" << this << std::endl;
+	}
+	~Graduate()
+	{
+		std::cout << "GDestructor:\t" << this << std::endl;
+	}
+	//		Methods:
+	void print()
+	{
+		Human::print();
+		std::cout << practice << " " << grade <<" " <<specialty<< std::endl;
+	}
 };
 
 void main()
@@ -159,4 +206,7 @@ void main()
 	std::cout<<delimiter;
 	Teacher professor("White", "Walter", 55, "Chemistry", 20);
 	professor.print();
+	std::cout << delimiter;
+	Graduate grats("Crimer", "John", 24,"DONE",5,"Biology");
+	grats.print();
 }
