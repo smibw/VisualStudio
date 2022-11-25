@@ -54,7 +54,7 @@ void main()
 	char sz_command[_MAX_FNAME] ="notepad ";
 	strcat(sz_command, wal_filename);
 
-	system(sz_command);
+	//system(sz_command);
 
 	fin.clear();
 	fin.seekg(0);
@@ -67,15 +67,16 @@ void main()
 		for (int i = 1; (!fin.eof());i++)	
 		{
 			fin >> sz_ip_buffer >> sz_mac_buffer;
+			if (sz_ip_buffer[0] == 0 || sz_mac_buffer == 0)continue;
 			for (int i = 0; sz_mac_buffer[i]; i++)
 				if (sz_mac_buffer[i] == '-') sz_mac_buffer[i] = ':';
-			std::cout << number << "-" << i << std::endl;
+			std::cout<<"host " << number << "-" << i << std::endl;
 			std::cout << "{\n";
 			std::cout << "\thardware ethernet\t"<<sz_mac_buffer<<";\n";
 			std::cout << "\tfixed-adress\t" << sz_ip_buffer << ";\n";
 			std::cout << "}\n";
 
-			fout << number << "-" << i << std::endl;
+			fout <<"host " << number << "-" << i << std::endl;
 			fout << "{\n";
 			fout << "\thardware ethernet\t" << sz_mac_buffer << ";\n";
 			fout << "\tfixed-adress\t" << sz_ip_buffer << ";\n";
