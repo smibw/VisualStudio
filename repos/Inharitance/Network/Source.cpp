@@ -54,7 +54,7 @@ void main()
 	char sz_command[_MAX_FNAME] ="notepad ";
 	strcat(sz_command, wal_filename);
 
-	//system(sz_command);
+	system(sz_command);
 
 	fin.clear();
 	fin.seekg(0);
