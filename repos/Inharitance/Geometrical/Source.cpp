@@ -1,4 +1,4 @@
-#define _USE_MATH_DEFINES
+Ôªø#define _USE_MATH_DEFINES
 #include <iostream>
 #include<Windows.h>
 #include <math.h>
@@ -72,8 +72,8 @@ namespace Geometry
 		virtual void draw()const = 0;
 		virtual void info()const
 		{
-			std::cout << "œÎÓ˘‡‰¸ ÙË„Û˚ : " << get_area() << std::endl;
-			std::cout << "œÂËÏÂÚ ÙË„Û˚: " << get_perimeter() << std::endl;
+			std::cout << "–ü–ª–æ—â–∞–¥—å —Ñ–∏–≥—É—Ä—ã : " << get_area() << std::endl;
+			std::cout << "–ü–µ—Ä–∏–º–µ—Ç—Ä —Ñ–∏–≥—É—Ä—ã: " << get_perimeter() << std::endl;
 			draw();
 		}
 	};
@@ -124,7 +124,7 @@ namespace Geometry
 		void info()const override
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "ƒÎËÌ‡ ÒÚÓÓÌ˚ Í‚‡‰‡Ú‡: " << side << " ÛÒÎÓ‚Ì˚ı Â‰ËÌËˆ" << std::endl;
+			std::cout << "–î–ª–∏–Ω–∞ —Å—Ç–æ—Ä–æ–Ω—ã –∫–≤–∞–¥—Ä–∞—Ç–∞: " << side << " —É—Å–ª–æ–≤–Ω—ã—Ö –µ–¥–∏–Ω–∏—Ü" << std::endl;
 			Shape::info();
 		}
 	};
@@ -183,34 +183,34 @@ namespace Geometry
 			}
 			SetConsoleTextAttribute(hConsole, Color::console_default);
 			*/
-			//1 œÓÎÛ˜‡ÂÏ ÓÍÌÓ ÍÓÌÒÓÎË
+			//1 –ü–æ–ª—É—á–∞–µ–º –æ–∫–Ω–æ –∫–æ–Ω—Å–æ–ª–∏
 			HWND hwnd = GetConsoleWindow();
-			//2 œÓÎÛ˜‡ÂÏ ÍÓÌÚÂÍÒÚ ÛÒÚÓÈÒÚ‚‡ ‰Îˇ ÓÍÌ‡ ÍÓÌÒÓÎË
-			HDC hdc = GetDC(hwnd); // ˝ÚÓ, ÚÓ Ì‡ ˜ÂÏ Ï˚ ·Û‰ÂÏ ËÒÓ‚‡Ú¸
+			//2 –ü–æ–ª—É—á–∞–µ–º –∫–æ–Ω—Ç–µ–∫—Å—Ç —É—Å—Ç—Ä–æ–π—Å—Ç–≤–∞ –¥–ª—è –æ–∫–Ω–∞ –∫–æ–Ω—Å–æ–ª–∏
+			HDC hdc = GetDC(hwnd); // —ç—Ç–æ, —Ç–æ –Ω–∞ —á–µ–º –º—ã –±—É–¥–µ–º —Ä–∏—Å–æ–≤–∞—Ç—å
 
-			//3 —ÓÁ‰‡ÂÏ Í‡‡Ì‰‡¯-˝ÚÓ ÚÓ, ˜ÂÏ Ï˚ ·Û‰ÂÏ ËÒÓ‚‡Ú¸(Í‡‡Ì‰‡¯ ËÒÛÂÚ ÎËÌËË) Ë ÒÓÁ‰‡ÂÏ ÍËÒÚ¸(Á‡ÎË‚Í‡)
+			//3 –°–æ–∑–¥–∞–µ–º –∫–∞—Ä–∞–Ω–¥–∞—à-—ç—Ç–æ —Ç–æ, —á–µ–º –º—ã –±—É–¥–µ–º —Ä–∏—Å–æ–≤–∞—Ç—å(–∫–∞—Ä–∞–Ω–¥–∞—à —Ä–∏—Å—É–µ—Ç –ª–∏–Ω–∏–∏) –∏ —Å–æ–∑–¥–∞–µ–º –∫–∏—Å—Ç—å(–∑–∞–ª–∏–≤–∫–∞)
 			HPEN hPen = CreatePen(PS_SOLID, line_width, color);
 			HBRUSH hBrush = CreateSolidBrush(color);
-			//4 ¬˚·Ë‡ÂÏ ˜ÂÏ Ë Ì‡ ˜ÂÏ Ï˚ ·Û‰ÂÏ ËÒÓ‚‡Ú¸
+			//4 –í—ã–±–∏—Ä–∞–µ–º —á–µ–º –∏ –Ω–∞ —á–µ–º –º—ã –±—É–¥–µ–º —Ä–∏—Å–æ–≤–∞—Ç—å
 			SelectObject(hdc,hPen);
 			SelectObject(hdc, hBrush);
 
 
-			//5 –ËÒÛÂÏ ÔˇÏÓÛ„ÓÎ¸ÌËÍ
+			//5 –†–∏—Å—É–µ–º –ø—Ä—è–º–æ—É–≥–æ–ª—å–Ω–∏–∫
 			::Rectangle(hdc, start_x, start_y, start_x+width, start_y+length);
 
-			//”‰‡ÎˇÂÏ Í‡‡Ì‰‡¯
+			//–£–¥–∞–ª—è–µ–º –∫–∞—Ä–∞–Ω–¥–∞—à
 			DeleteObject(hPen);
 			DeleteObject(hBrush);
 
-			// ŒÒ‚Ó·ÓÊ‰‡ÂÏ ÍÓÌÚÂÍÒÚ ÛÒÚÓÈÒÚ‚‡
+			// –û—Å–≤–æ–±–æ–∂–¥–∞–µ–º –∫–æ–Ω—Ç–µ–∫—Å—Ç —É—Å—Ç—Ä–æ–π—Å—Ç–≤–∞
 			ReleaseDC(hwnd, hdc);
 		}
 		void info()const override
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "ÿËËÌ‡: " << width << std::endl;
-			std::cout << "ƒÎËÌ‡: " << length << std::endl;
+			std::cout << "–®–∏—Ä–∏–Ω–∞: " << width << std::endl;
+			std::cout << "–î–ª–∏–Ω–∞: " << length << std::endl;
 			Shape::info();
 
 		}
@@ -224,7 +224,7 @@ namespace Geometry
 		virtual double get_height()const = 0;
 		void info()const
 		{
-			std::cout << "¬˚ÒÓÚ‡: " << get_height() << std::endl;
+			std::cout << "–í—ã—Å–æ—Ç–∞: " << get_height() << std::endl;
 			Shape::info();
 		}
 	};
@@ -282,7 +282,7 @@ namespace Geometry
 		void info()const 
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "—ÚÓÓÌ‡ ‡‚ÌÓÒÚÓÓÌÌÂ„Ó ÚÂÛ„ÓÎ¸ÌËÍ‡: " <<side<< std::endl;
+			std::cout << "–°—Ç–æ—Ä–æ–Ω–∞ —Ä–∞–≤–Ω–æ—Å—Ç–æ—Ä–æ–Ω–Ω–µ–≥–æ —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–∞: " <<side<< std::endl;
 			Triangle::info();
 		}
 	};
@@ -352,8 +352,8 @@ namespace Geometry
 		void info()const
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "–‡‚ÌÓ·Â‰ÂÌÌ‡ˇ ÒÚÓÓÌ‡: " << isosceles_side<<std::endl;
-			std::cout << "“ÂÚ¸ˇ ÒÚÓÓÌ‡ ‡‚ÌÓ·Â‰ÂÌÌÓ„Ó ÚÂÛ„ÓÎ¸ÌËÍ‡: " << side << std::endl;
+			std::cout << "–†–∞–≤–Ω–æ–±–µ–¥—Ä–µ–Ω–Ω–∞—è —Å—Ç–æ—Ä–æ–Ω–∞: " << isosceles_side<<std::endl;
+			std::cout << "–¢—Ä–µ—Ç—å—è —Å—Ç–æ—Ä–æ–Ω–∞ —Ä–∞–≤–Ω–æ–±–µ–¥—Ä–µ–Ω–Ω–æ–≥–æ —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–∞: " << side << std::endl;
 			Shape::info();
 		}
 	};
@@ -435,9 +435,9 @@ namespace Geometry
 		void info()const
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "œÂ‚˚È Í‡ÚÂÚ: " << akatet << std::endl;
-			std::cout << "¬ÚÓÓÈ Í‡ÚÂÚ: " << bkatet << std::endl;
-			std::cout << "√ËÔÓÚÂÌÛÁ‡: " << hypotenuse << std::endl;
+			std::cout << "–ü–µ—Ä–≤—ã–π –∫–∞—Ç–µ—Ç: " << akatet << std::endl;
+			std::cout << "–í—Ç–æ—Ä–æ–π –∫–∞—Ç–µ—Ç: " << bkatet << std::endl;
+			std::cout << "–ì–∏–ø–æ—Ç–µ–Ω—É–∑–∞: " << hypotenuse << std::endl;
 			Shape::info();
 		}
 	};
@@ -456,8 +456,8 @@ namespace Geometry
 		}
 		void set_aside(double aside)
 		{
-			//if (aside > bside + cside)aside = (bside + cside)/2; œÓÔ˚ÚÍ‡ Ò‰ÂÎ‡Ú¸ Á‡˘ËÚÛ ÓÚ ‰Û‡Í‡, ˜ÚÓ·˚ ÌÂÎ¸Áˇ ·˚ÎÓ Ò‰ÂÎ‡Ú¸ ÚÂÛ„ÓÎ¸ÌËÍ
-			//Ò ÒÚÓÓÌÓÈ, ÍÓÚÓ‡ˇ ·ÓÎ¸¯Â ÒÛÏÏ˚ ‰‚Ûı ‰Û„Ëı ÒÚÓÓÌ. œÓ˜ÂÏÛ-ÚÓ ‚˚‰‡ÂÚ ‰Ë˜¸ ÔÓÎÌÂÈ¯Û˛...
+			//if (aside > bside + cside)aside = (bside + cside)/2; –ü–æ–ø—ã—Ç–∫–∞ —Å–¥–µ–ª–∞—Ç—å –∑–∞—â–∏—Ç—É –æ—Ç –¥—É—Ä–∞–∫–∞, —á—Ç–æ–±—ã –Ω–µ–ª—å–∑—è –±—ã–ª–æ —Å–¥–µ–ª–∞—Ç—å —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫
+			//—Å —Å—Ç–æ—Ä–æ–Ω–æ–π, –∫–æ—Ç–æ—Ä–∞—è –±–æ–ª—å—à–µ —Å—É–º–º—ã –¥–≤—É—Ö –¥—Ä—É–≥–∏—Ö —Å—Ç–æ—Ä–æ–Ω. –ü–æ—á–µ–º—É-—Ç–æ –≤—ã–¥–∞–µ—Ç –¥–∏—á—å –ø–æ–ª–Ω–µ–π—à—É—é...
 			if (aside < 3)aside = 3;
 			if (aside > 15)aside = 15;
 			this->aside = aside;
@@ -506,9 +506,9 @@ namespace Geometry
 		void info()const override
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "—ÚÓÓÌ‡ ¿: " << aside << std::endl;
-			std::cout << "—ÚÓÓÌ‡ ¡: " << bside << std::endl;
-			std::cout << "—ÚÓÓÌ‡ —: " << cside << std::endl;
+			std::cout << "–°—Ç–æ—Ä–æ–Ω–∞ –ê: " << aside << std::endl;
+			std::cout << "–°—Ç–æ—Ä–æ–Ω–∞ –ë: " << bside << std::endl;
+			std::cout << "–°—Ç–æ—Ä–æ–Ω–∞ –°: " << cside << std::endl;
 			Shape::info();
 		}
 	
@@ -558,7 +558,7 @@ namespace Geometry
 		void info()const
 		{
 			std::cout << typeid(*this).name() << std::endl;
-			std::cout << "–‡‰ËÛÒ: " << radius << std::endl;
+			std::cout << "–†–∞–¥–∏—É—Å: " << radius << std::endl;
 			Shape::info();
 		}
 	};
