@@ -67,13 +67,13 @@ namespace Geometry
 			set_line_width(line_width);
 		}
 		virtual ~Shape() {}
-		virtual double area()const = 0;
-		virtual double perimeter()const = 0;
+		virtual double get_area()const = 0;
+		virtual double get_perimeter()const = 0;
 		virtual void draw()const = 0;
 		virtual void info()const
 		{
-			std::cout << "Площадь фигуры : " << area() << std::endl;
-			std::cout << "Периметр фигуры: " << perimeter() << std::endl;
+			std::cout << "Площадь фигуры : " << get_area() << std::endl;
+			std::cout << "Периметр фигуры: " << get_perimeter() << std::endl;
 			draw();
 		}
 	};
@@ -99,11 +99,11 @@ namespace Geometry
 			set_side(side);
 		}
 		~Square() {}
-		double area()const override
+		double get_area()const override
 		{
 			return  side * side;
 		}
-		double perimeter()const override
+		double get_perimeter()const override
 		{
 			return side * 4;
 		}
@@ -160,11 +160,11 @@ namespace Geometry
 			set_length(length);
 		}
 		~Rectangle() {}
-		double area()const override
+		double get_area()const override
 		{
 			return width * length;
 		}
-		double perimeter()const override
+		double get_perimeter()const override
 		{
 			return (width + length) * 2;
 		}
@@ -242,20 +242,21 @@ namespace Geometry
 			if (side > 200)side = 200;
 			this->side = side;
 		}
-		EquilateralTriangle(double side, unsigned int start_x, unsigned int start_y, unsigned int line_width, Color color):Triangle(start_x, start_y, line_width, color)
+		EquilateralTriangle(double side, unsigned int start_x, unsigned int start_y, unsigned int line_width, Color color)
+			:Triangle(start_x, start_y, line_width, color)
 		{
 			set_side(side);
 		}
 		~EquilateralTriangle() {}
 		double get_height()const override
 		{
-			return 2 * area() / side;
+			return 2 * get_area() / side;
 		}
-		double area()const override
+		double get_area()const override
 		{
 			return side * side * sqrt(3) / 4;
 		}
-		double perimeter()const override
+		double get_perimeter()const override
 		{
 			return side * 3;
 		}
@@ -269,7 +270,7 @@ namespace Geometry
 			SelectObject(hdc,hBrush);
 			POINT vert[] =
 			{
-				{start_x,start_x + side},
+				{start_x,start_y + side},
 				{start_x + side,start_y + side},
 				{start_x + side / 2,start_y + side - get_height()}
 			};
@@ -283,6 +284,161 @@ namespace Geometry
 			std::cout << typeid(*this).name() << std::endl;
 			std::cout << "Сторона равностороннего треугольника: " <<side<< std::endl;
 			Triangle::info();
+		}
+	};
+	class IsoscelesTriagnle :public Triangle
+	{
+		double side;
+		double isosceles_side;
+	public:
+		double get_side()const
+		{
+			return side;
+		}
+		double get_isosceles_side()const
+		{
+			return isosceles_side;
+		}
+		void set_side(double side)
+		{
+			if (side < 20)side = 20;
+			if (side > 220)side = 220;
+			this->side = side;
+		}
+		void set_isosceles_side(double isosceles_side)
+		{
+			if (isosceles_side < 20)isosceles_side = 20;
+			if (isosceles_side > 220)isosceles_side = 220;
+			this->isosceles_side = isosceles_side;
+		}
+		IsoscelesTriagnle(double side, double isosceles_side, unsigned int start_x, unsigned int start_y, unsigned int line_width, Color color)
+			:Triangle(start_x, start_y, line_width,color)
+		{
+			set_side(side);
+			set_isosceles_side(isosceles_side);
+		}
+		~IsoscelesTriagnle() {};
+		double get_height()const override
+		{
+			return 2 * get_area() / side;
+		}
+		double get_area()const override
+		{
+			return sqrt(get_perimeter() / 2 * (get_perimeter() / 2 - isosceles_side) * (get_perimeter() / 2 - isosceles_side) * (get_perimeter() / 2 - side));
+		}
+		double get_perimeter()const override
+		{
+			return isosceles_side * 2 + side;
+		}
+		void draw()const override
+		{
+			HWND hwnd = GetConsoleWindow();
+			HDC hdc = GetDC(hwnd);
+			HPEN hPen = CreatePen(PS_SOLID, line_width, color);
+			HBRUSH hBrush = CreateSolidBrush(color);
+			SelectObject(hdc, hPen);
+			SelectObject(hdc, hBrush);
+			POINT verty[] =
+			{
+				{start_x,start_y + isosceles_side},
+				{start_x + side,start_y + isosceles_side},
+				{start_x + side / 2,start_y + isosceles_side - get_height()}
+			};
+			::Polygon(hdc, verty, 3);
+			DeleteObject(hBrush);
+			DeleteObject(hPen);
+			ReleaseDC(hwnd, hdc);
+		}
+		void info()const
+		{
+			std::cout << typeid(*this).name() << std::endl;
+			std::cout << "Равнобедренная сторона: " << isosceles_side<<std::endl;
+			std::cout << "Третья сторона равнобедренного треугольника: " << side << std::endl;
+			Shape::info();
+		}
+	};
+	class RectangularTriangle :public Triangle
+	{
+		double akatet;
+		double bkatet;
+		double hypotenuse;
+	public:
+		double get_akatet()const
+		{
+			return akatet;
+		}
+		double get_bkatet()const
+		{
+			return bkatet;
+		}
+		double get_hypotenuse()const
+		{
+			return hypotenuse;
+		}
+		void set_akatet(double akatet)
+		{
+			if (akatet < 20)akatet = 20;
+			if (akatet > 220)akatet = 220;
+			this->akatet = akatet;
+		}
+		void set_bkatet(double bkatet)
+		{
+			if (bkatet < 20)bkatet = 20;
+			if (bkatet > 220)bkatet = 220;
+			this->bkatet = bkatet;
+		}
+		void set_hypotenuse(double hypotenuse)
+		{
+			if (hypotenuse < 40)hypotenuse = 40;
+			if (hypotenuse > 440)hypotenuse = 440;
+			this->hypotenuse = hypotenuse;
+		}
+		RectangularTriangle(double akatet, double bkatet, double hypotenuse, unsigned int start_x, unsigned int start_y, unsigned int line_width, Color color)
+			:Triangle(start_x, start_y, line_width, color)
+		{
+			set_akatet(akatet);
+			set_bkatet(bkatet);
+			set_hypotenuse(hypotenuse);
+		}
+		~RectangularTriangle() {}
+		double get_height()const override
+		{
+			return 2 * get_area() / hypotenuse;
+		}
+		double get_area()const override
+		{
+			return akatet * bkatet / 2;
+		}
+		double get_perimeter()const override
+		{
+			return akatet + bkatet + hypotenuse;
+		}
+		void draw()const
+		{
+			HWND hwnd = GetConsoleWindow();
+			HDC hdc = GetDC(hwnd);
+			HPEN hPen = CreatePen(PS_SOLID, line_width, color);
+			HBRUSH hBrush = CreateSolidBrush(color);
+			SelectObject(hdc,hPen);
+			SelectObject(hdc,hBrush);
+			POINT vetr[] =
+			{
+				{start_x,start_y},
+				{start_x,start_y+akatet},
+				{start_x+bkatet,start_y+akatet}
+			};
+			::Polygon(hdc, vetr, 3);
+			DeleteObject(hBrush);
+			DeleteObject(hPen);
+			ReleaseDC(hwnd, hdc);
+		}
+		void info()const
+		{
+			std::cout << typeid(*this).name() << std::endl;
+			std::cout << "Первый катет: " << akatet << std::endl;
+			std::cout << "Второй катет: " << bkatet << std::endl;
+			std::cout << "Гипотенуза: " << hypotenuse << std::endl;
+			Shape::info();
 		}
 	};
 	/*
@@ -377,11 +533,11 @@ namespace Geometry
 			set_radius(radius);
 		}
 		~Circle() {}
-		double area()const override
+		double get_area()const override
 		{
 			return M_PI * radius * radius;
 		}
-		double perimeter()const override
+		double get_perimeter()const override
 		{
 			return 2* M_PI* radius;
 		}
@@ -423,8 +579,12 @@ void main()
 	//tri.info();
 	Geometry::Circle circ(100,500,100,11, Geometry::Color::yellow);
 	circ.info();
-	Geometry::EquilateralTriangle e_try(170, 200, 200, 8, Geometry::Color::green);
+	Geometry::EquilateralTriangle e_try(170, 700, 200, 8, Geometry::Color::green);
 	e_try.info();
+	Geometry::IsoscelesTriagnle i_try(150, 90, 500, 500, 8, Geometry::Color::red);
+	i_try.info();
+	Geometry::RectangularTriangle r_try(150, 180, 300, 400, 300, 10, Geometry::Color::blue);
+	r_try.info();
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
