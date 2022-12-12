@@ -82,24 +82,24 @@ public:
 
 		ConstIterator& operator++()
 		{
-			Temp = Temp->pNext;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pNext;
 			return *this;
 		}
 		ConstIterator operator++(int)
 		{
 			ConstIterator old = *this;
-			Temp = Temp->pNext;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pNext;
 			return old;
 		}
 		ConstIterator& operator--()
 		{
-			Temp = Temp->pPrev;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pPrev;
 			return *this;
 		}
 		ConstIterator operator--(int)
 		{
 			ConstIterator old = *this;
-			Temp = Temp->pPrev;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pPrev;
 			return old;
 		}
 	};
@@ -121,24 +121,24 @@ public:
 
 		ConstReverseIterator& operator++()
 		{
-			Temp = Temp->pPrev;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pPrev;
 			return *this;
 		}
 		ConstReverseIterator operator++(int)
 		{
 			ConstReverseIterator old = *this;
-			Temp = Temp->pPrev;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pPrev;
 			return old;
 		}
 		ConstReverseIterator& operator--()
 		{
-			Temp = Temp->pNext;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pNext;
 			return *this;
 		}
 		ConstReverseIterator operator--(int)
 		{
 			ConstReverseIterator old = *this;
-			Temp = Temp->pNext;
+			ConstBaseIterator::Temp = ConstBaseIterator::Temp->pNext;
 			return old;
 		}
 	};
@@ -148,9 +148,9 @@ public:
 		Iterator(Element* Temp) :ConstIterator(Temp) {}
 		~Iterator() {}
 
-		int& operator*()
+		T& operator*()
 		{
-			return Temp->Data;
+			return ConstBaseIterator::Temp->Data;
 		}
 	};
 	class ReverseIterator :public ConstReverseIterator
@@ -159,9 +159,9 @@ public:
 		ReverseIterator(Element* Temp) :ConstReverseIterator(Temp) {}
 		~ReverseIterator() {}
 
-		int& operator*()
+		T& operator*()
 		{
-			return Temp->Data;
+			return ConstBaseIterator::Temp->Data;
 		}
 	};
 	ConstIterator begin()const
@@ -180,6 +180,14 @@ public:
 	{
 		return nullptr;
 	}
+	ReverseIterator rbegin()
+	{
+		return Tail;
+	}
+	ReverseIterator rend()
+	{
+		return nullptr;
+	}
 	//					Constructors:
 	List()
 	{
@@ -189,7 +197,7 @@ public:
 	}
 	List(const std::initializer_list<T>& il) :List()
 	{
-		for (int const* it = il.begin(); it != il.end(); it++)
+		for (T const* it = il.begin(); it != il.end(); it++)
 		{
 			push_back(*it);
 		}
@@ -314,7 +322,7 @@ template <typename T>
 List<T> operator+(const List<T>& left, const List<T>& right)
 {
 	List<T> cat = left;
-	for (List<T>::ConstIterator it = right.begin(); it != right.end(); it++)
+	for (typename List<T>::ConstIterator it = right.begin(); it != right.end(); it++)
 	{
 		cat.push_back(*it);
 		//*it *= 100;
@@ -325,7 +333,7 @@ List<T> operator+(const List<T>& left, const List<T>& right)
 template<typename T>
 void FillRand(List<T>& list)
 {
-	for (List<T>::Iterator it = list.begin(); it != list.end(); it++)
+	for (typename List<T>::Iterator it = list.begin(); it != list.end(); it++)
 	{
 		*it = rand();
 	}
@@ -400,7 +408,28 @@ void main()
 
 
 	List<int> i_list = { 3,5,8,13,21 };
+	i_list.print();
+	i_list.reverse_print();
+	List<int> i_list_2 = { 34,55,89 };
+	List<int> i_list_3 = i_list + i_list_2;
+	for (int i : i_list_3) std::cout << i << tab; std::cout << std::endl;
 
+	List<double> d_list_1 = { 2.7, 3.14, 5.3, 8.9 };
+	d_list_1.print();
+	d_list_1.reverse_print();
+	List<double> d_list_2 = { 25.4, 88.97, 98.2 };
+	List<double> d_list_3 = d_list_1 + d_list_2;
+	for (double i : d_list_3)std::cout << i << tab; std::cout << std::endl;
+
+	List<std::string> s_list_1 = { "Хорошо","живет","на","свете","Винни","Пух" };
+	List<std::string> s_list_2 = { "Вот","и","сказочке","конец","а","кто","слушал","молодец" };
+	List<std::string> s_list_3 = s_list_1 + s_list_2;
+	for (std::string i : s_list_3)std::cout << i << "  "; std::cout << std::endl;
+	for (List<std::string>::ReverseIterator it = s_list_3.rbegin(); it != s_list_3.rend(); ++it)
+	{
+		std::cout << *it << tab;
+	}
+	std::cout << std::endl;
 }
 /*
 Двусвязный список=список, который содержит не только адрес след но и предыдущего элемента
