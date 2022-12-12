@@ -8,15 +8,16 @@ using std::endl;
 #define delimiter "\n----------------------------------\n"
 //#define DEBUG
 
+template <typename T>
 class List
 {
 	class Element
 	{
-		int Data;
+		T Data;
 		Element* pNext;
 		Element* pPrev;
 	public:
-		Element(int Data, Element* pNext = nullptr, Element* pPrev = nullptr) 
+		Element(T Data, Element* pNext = nullptr, Element* pPrev = nullptr) 
 			:Data(Data), pNext(pNext), pPrev(pPrev)
 		{
 			std::cout << "EConstructor:\t" << this << std::endl;
@@ -25,9 +26,9 @@ class List
 		{
 			std::cout << "EDestructor:\t" << this << std::endl;
 		}
-		friend class List;
+		friend class List<T>;
 	}*Head, *Tail;
-	unsigned int size;
+		unsigned int size;
 	class ConstBaseIterator
 	{
 	protected:
@@ -55,7 +56,7 @@ class List
 		{
 			return this->Temp != other.Temp;
 		}
-		const int& operator*()const
+		const T& operator*()const
 		{
 			return Temp->Data;
 		}
@@ -141,7 +142,7 @@ public:
 			return old;
 		}
 	};
-	class Iterator :public ConstIterator
+	class Iterator:public ConstIterator
 	{
 	public:
 		Iterator(Element* Temp) :ConstIterator(Temp) {}
@@ -186,14 +187,14 @@ public:
 		size = 0;
 		std::cout << "LConstructor:\t" << this << std::endl;
 	}
-	List(const std::initializer_list<int>& il) :List()
+	List(const std::initializer_list<T>& il) :List()
 	{
 		for (int const* it = il.begin(); it != il.end(); it++)
 		{
 			push_back(*it);
 		}
 	}
-	List(const List& other) :List()
+	List(const List<T>& other) :List()
 	{
 		*this = other;
 		std::cout << "CopeCOnstructor:" << this << std::endl;
@@ -205,7 +206,7 @@ public:
 		std::cout << "LDestructor:\t" << this << std::endl;
 	}
 	//			Operator:
-	List& operator=(const List& other)
+	List<T>& operator=(const List<T>& other)
 	{
 		if (this == &other) return *this;
 		while (Head)pop_front();
@@ -215,7 +216,7 @@ public:
 		return *this;
 	}
 	//			Adding Elements:
-	void push_front(int Data)
+	void push_front(T Data)
 	{
 		if (Head == nullptr && Tail == nullptr)
 		{
@@ -226,7 +227,7 @@ public:
 		Head =Head->pPrev= new Element(Data, Head);
 		size++;
 	}
-	void push_back(int Data)
+	void push_back(T Data)
 	{
 		if (Head == nullptr && Tail == nullptr)
 		{
@@ -237,7 +238,7 @@ public:
 		Tail = Tail->pNext = new Element(Data, nullptr, Tail);
 		size++;
 	}
-	void insert(int Index, int Data)
+	void insert(int Index, T Data)
 	{
 		if (Index > size)
 		{
@@ -309,10 +310,11 @@ public:
 	}
 };
 
-List operator+(const List& left, const List& right)
+template <typename T>
+List<T> operator+(const List<T>& left, const List<T>& right)
 {
-	List cat = left;
-	for (List::ConstIterator it = right.begin(); it != right.end(); it++)
+	List<T> cat = left;
+	for (List<T>::ConstIterator it = right.begin(); it != right.end(); it++)
 	{
 		cat.push_back(*it);
 		//*it *= 100;
@@ -320,10 +322,20 @@ List operator+(const List& left, const List& right)
 	return cat;
 }
 
+template<typename T>
+void FillRand(List<T>& list)
+{
+	for (List<T>::Iterator it = list.begin(); it != list.end(); it++)
+	{
+		*it = rand();
+	}
+}
+
 
 //#define BASE_CHECK
 //#define CONSTRUCTION_CHECK
 //#define pumpurumpumpum
+//#define CHTOTOCHECK
 
 void main()
 {
@@ -377,12 +389,18 @@ void main()
 #endif // pumpurumpumpum
 
 
+#if CHTOTOCHECK
 	List list = { 3, 5, 8, 13, 21 };
 	List list2 = { 34,55,89 };
 	List list3 = list + list2;
 	for (int i : list)std::cout << i << tab;	std::cout << std::endl;
 	for (int i : list2)std::cout << i << tab;	std::cout << std::endl;
 	for (int i : list3)std::cout << i << tab;	std::cout << std::endl;
+#endif // CHTOTOCHECK
+
+
+	List<int> i_list = { 3,5,8,13,21 };
+
 }
 /*
 Двусвязный список=список, который содержит не только адрес след но и предыдущего элемента
