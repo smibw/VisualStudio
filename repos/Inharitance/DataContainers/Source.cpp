@@ -1,4 +1,5 @@
-﻿#include<iostream>
+﻿#include<ctime>
+#include<iostream>
 using namespace std;
 using std::cin;
 using std::cout;
@@ -15,13 +16,20 @@ public:
 	Element(int Data, Element* pNext = nullptr) :Data(Data), pNext(pNext)
 	{
 		count++;
+#ifdef DEBUG
 		cout << "EConstructor:\t" << this << endl;
+#endif // DEBUG
+
 	}
 	~Element()
 	{
 		count--;
+#ifdef DEBUG
 		cout << "EDestructor:\t" << this << endl;
+#endif // DEBUG
+
 	}
+	friend class Iterator;
 	friend class ForwardList;
 	friend ForwardList operator+(const ForwardList& left, const ForwardList& right);
 	
@@ -29,17 +37,78 @@ public:
 
 unsigned int Element::count = 0;	//Статическую переменную можно проинициализировать только за классом
 
+class Iterator
+{
+	Element* Temp;
+public:
+	Iterator(Element* Temp) :Temp(Temp)
+	{
+		std::cout << "ItCOnstructor:\t" <<this<< std::endl;
+	}
+	~Iterator()
+	{
+		std::cout << "ItDestructor:\t" <<this<< std::endl;
+	}
+
+	Iterator& operator++()
+	{
+		Temp = Temp->pNext;
+		return *this;
+	}
+
+	bool operator==(const Iterator& other)
+	{
+		return this->Temp == other.Temp;
+	}
+	bool operator!=(const Iterator& other)
+	{
+		return this->Temp != other.Temp;
+	}
+
+	const int& operator*()const
+	{
+		return Temp->Data;
+	}
+	int& operator*()
+	{
+		return Temp->Data;
+	}
+};
+
 class ForwardList
 {
 	Element* Head;	//Указатель на начальный элемент списка
 	//Голова является точкой входа в список
 	unsigned int size;
 public:
+	Iterator begin()
+	{
+		return Head;
+	}
+	Iterator end()
+	{
+		return nullptr;
+	}
+				//Constructor:
 	ForwardList() :Head(nullptr), size(0)
 	{
 		//Конструктор по умолчанию создает пустой список.
 		//Если Голова указывает на 0, то список пуст
 		cout << "LConstructor:\t" << this << endl;
+
+	}
+	ForwardList(const std::initializer_list<int>& il) :ForwardList()
+	{
+		//initializer_list-контейнер.
+		//Контейнер- объект, который организует хранение других объектов в памяти.
+		//У любого контейнера есть методы
+		// begin()- возвращает итератор на начало контейнера
+		// end() - возвращает итератор на конец контейнера
+		std::cout << typeid(il.begin()).name() << std::endl;
+		for (int const* it = il.begin(); it != il.end(); it++)
+		{
+			push_back(*it);
+		}
 	}
 	ForwardList(const ForwardList& other):ForwardList()
 	{
@@ -47,16 +116,19 @@ public:
 			push_back(Temp->Data);*/
 		*this = other;
 		std::cout << "CopyConstructor:\t" << this << std::endl;
+
 	}
 	ForwardList(const ForwardList&& other) :ForwardList()
 	{
 		*this = std::move(other);
 		std::cout << "MoveConstructor:\t" << std::endl;
+
 	}
 	~ForwardList()
 	{
 		while (Head)pop_front();
 		cout << "LDestructor:\t" << this << endl;
+
 	}
 	//				Operators:
 	ForwardList& operator=(const ForwardList& other)
@@ -64,7 +136,8 @@ public:
 		if (this == &other)return *this;
 		while (Head)pop_front();
 		for (Element* Temp = other.Head; Temp; Temp = Temp->pNext)
-			push_back(Temp->Data);
+			push_front(Temp->Data);
+		reverse();
 		std::cout << "CopyAssignment:\t" << this << std::endl;
 		return *this;
 	}
@@ -160,6 +233,18 @@ public:
 	}
 
 	//				Methods:
+	void reverse()
+	{
+		ForwardList reverse;
+		while(Head)
+		{
+			reverse.push_front(Head->Data);
+			pop_front();
+		}
+		this->Head = reverse.Head;
+		this->size = reverse.size;
+		reverse.Head = nullptr;
+	}
 	void print()const
 	{
 		cout << "Head:\t" << Head << endl;
@@ -192,6 +277,7 @@ ForwardList operator+(const ForwardList& left, const ForwardList& right)
 //#define COUNT_CHECK
 //#define RANGE_BASED_FOR_ARRAY
 #define RANGE_BASED_FOR_LIST
+//#define PERFORMANCE_CHECK
 
 void main()
 {
@@ -259,6 +345,7 @@ void main()
 
 #ifdef RANGE_BASED_FOR_LIST
 	ForwardList list = { 3,5,8,13,21 };
+	list.print();
 	for (int i : list)
 	{
 		std::cout << i << "\t";
@@ -266,4 +353,28 @@ void main()
 	std::cout << std::endl;
 #endif // RANGE_BASED_FOR_LIST
 
-}
+#ifdef PERFORMANCE_CHECK
+
+	int n;
+	std::cout << "Введите размер списка: "; std::cin >> n;
+	ForwardList list;
+	std::cout << "List created, loading data..." << std::endl;
+	time_t start = time(NULL);
+	for (int i = 0; i < n; i++)
+	{
+		list.push_front(rand() % 100);
+	}
+	time_t end = time(NULL);
+	std::cout << "Data load complete" << std::endl;
+	std::cout << "Spend time: " << end - start << std::endl;
+	//list.print();
+	std::cout << "Start copying" << std::endl;
+	start = time(NULL);
+	ForwardList list2 = list;
+	end = time(NULL);
+	std::cout << "End copying" << std::endl;
+	std::cout << "Spend time: " << end - start << std::endl;
+	//list2.print();  
+#endif // PERFORMANCE_CHECK
+
+} 
