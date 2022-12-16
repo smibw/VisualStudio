@@ -38,6 +38,41 @@ public:
 	}
 
 	//		Methods:
+	int minValue(Element* Root)const
+	{
+		if (Root->pLeft == nullptr)return Root->Data;
+
+		return minValue(Root->pLeft);
+	}
+	int maxValue(Element* Root)const
+	{
+		if (Root->pRight == nullptr)return Root->Data;
+		return maxValue(Root->pRight);
+	}
+	int count(Element* Root)const
+	{
+		if (Root == nullptr)return 0;
+		else return count(Root->pLeft) + count(Root->pRight) + 1;
+	}
+	int sum(Element* Root)const
+	{
+		if (Root == nullptr)return 0;
+		else return sum(Root->pLeft) + sum(Root->pRight) + Root->Data;
+	}
+	double avg()const
+	{
+		return (double)sum(Root) / count(Root);
+	}
+	int depth(Element* Root)
+	{
+		if (Root == nullptr)return 0;
+		else if (depth(Root->pLeft) + 1 > depth(Root->pRight) + 1)return depth(Root->pLeft) + 1;
+		else return depth(Root->pRight) + 1;
+	}
+	void erase(int Data, Element* Root)
+	{
+
+	}
 	void insert(int Data, Element* Root)
 	{
 		if (this->Root == nullptr)this->Root = new Element(Data);
@@ -74,6 +109,12 @@ void main()
 	}
 	tree.print(tree.getRoot());
 	std::cout<<std::endl;
+	std::cout << "Минимальное значение бинарного дерева: " << tree.minValue(tree.getRoot()) << std::endl;
+	std::cout << "Максимальное значение бинарного дерева: " << tree.maxValue(tree.getRoot()) << std::endl;
+	std::cout << "Количество элементов в бинарном дереве: " << tree.count(tree.getRoot()) << std::endl;
+	std::cout << "Сумма всех элементов бинарного дерева: " << tree.sum(tree.getRoot()) << std::endl;
+	std::cout << "Среднее значение в бинарном дереве: " << tree.avg() << std::endl << std::endl;
+	std::cout << "Глубина бинарного дерева: " << tree.depth(tree.getRoot()) << std::endl;
 }
 /*
 	Бинарное дерево-набор элементов в произвольных областях памяти, каждый из которых имеет 2 потомка
