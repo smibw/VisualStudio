@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zTasksForTraning", "zTasksF
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringLibTest", "StringLibTest\StringLibTest.vcxproj", "{9D06B337-837B-4059-89EA-4496938C9D68}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Split", "Split\Split.vcxproj", "{935E8D86-D8E2-4638-8389-D2739CDBDC67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -211,6 +213,14 @@ Global
 		{9D06B337-837B-4059-89EA-4496938C9D68}.Release|x64.Build.0 = Release|x64
 		{9D06B337-837B-4059-89EA-4496938C9D68}.Release|x86.ActiveCfg = Release|Win32
 		{9D06B337-837B-4059-89EA-4496938C9D68}.Release|x86.Build.0 = Release|Win32
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Debug|x64.ActiveCfg = Debug|x64
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Debug|x64.Build.0 = Debug|x64
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Debug|x86.ActiveCfg = Debug|Win32
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Debug|x86.Build.0 = Debug|Win32
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Release|x64.ActiveCfg = Release|x64
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Release|x64.Build.0 = Release|x64
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Release|x86.ActiveCfg = Release|Win32
+		{935E8D86-D8E2-4638-8389-D2739CDBDC67}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
