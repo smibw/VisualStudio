@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<string>
 #include<fstream>
 #include<map>
@@ -14,13 +14,13 @@ using std::endl;
 
 const std::map<int, std::string> violation =
 {
-	{0,"Проезд на красный"},
-	{1,"Превышение скорости"},
-	{2,"Парковка в неположенном месте"},
-	{3,"Езда по встречной полосе"},
-	{4,"Оскорбление офицера"},
-	{5, "Езда в нетрезвом состоянии"},
-	{6,"Дрифт на перекрестке"},
+	{0,"РџСЂРѕРµР·Рґ РЅР° РєСЂР°СЃРЅС‹Р№"},
+	{1,"РџСЂРµРІС‹С€РµРЅРёРµ СЃРєРѕСЂРѕСЃС‚Рё"},
+	{2,"РџР°СЂРєРѕРІРєР° РІ РЅРµРїРѕР»РѕР¶РµРЅРЅРѕРј РјРµСЃС‚Рµ"},
+	{3,"Р•Р·РґР° РїРѕ РІСЃС‚СЂРµС‡РЅРѕР№ РїРѕР»РѕСЃРµ"},
+	{4,"РћСЃРєРѕСЂР±Р»РµРЅРёРµ РѕС„РёС†РµСЂР°"},
+	{5, "Р•Р·РґР° РІ РЅРµС‚СЂРµР·РІРѕРј СЃРѕСЃС‚РѕСЏРЅРёРё"},
+	{6,"Р”СЂРёС„С‚ РЅР° РїРµСЂРµРєСЂРµСЃС‚РєРµ"},
 };
 
 class Crime
@@ -53,9 +53,9 @@ void main()
 	setlocale(LC_ALL, "Rus");
 	std::map<std::string, std::list<Crime>> base; /*=
 	{
-		{"a777bb", {Crime(0,"улица Ленина"),Crime(6,"улица Космонавтов"),Crime(3,"улица Октябрьская")}},
-		{"m123ab", {Crime(2,"площадь Революции")}},
-		{"a234cc", {Crime(5,"улица Петакова"),Crime(4,"Кривой перекресток")}}
+		{"a777bb", {Crime(0,"СѓР»РёС†Р° Р›РµРЅРёРЅР°"),Crime(6,"СѓР»РёС†Р° РљРѕСЃРјРѕРЅР°РІС‚РѕРІ"),Crime(3,"СѓР»РёС†Р° РћРєС‚СЏР±СЂСЊСЃРєР°СЏ")}},
+		{"m123ab", {Crime(2,"РїР»РѕС‰Р°РґСЊ Р РµРІРѕР»СЋС†РёРё")}},
+		{"a234cc", {Crime(5,"СѓР»РёС†Р° РџРµС‚Р°РєРѕРІР°"),Crime(4,"РљСЂРёРІРѕР№ РїРµСЂРµРєСЂРµСЃС‚РѕРє")}}
 	};
 	  */
 	  //print(base);
@@ -100,12 +100,12 @@ void load(std::map<std::string, std::list<Crime>>& base, const std::string& file
 	{
 		while (!fin.eof())
 		{
-			std::string licence_plate;	//???????? ????
+			std::string licence_plate;	
 			std::getline(fin, licence_plate, ':');
 			if (licence_plate.empty())continue;
 			std::string all_crimes;
 			std::getline(fin, all_crimes);
-			all_crimes.erase(0, 1);	//??????? ????????? ?? ??????
+			all_crimes.erase(0, 1);	
 			//https://legacy.cplusplus.com/reference/string/string/erase/
 #ifdef STD_STRING_PARSE
 			//for (int start = 0, end = all_crimes.find(',');	/*end != std::string::npos*/;	start = end + 1, end = all_crimes.find(',', end + 1)
@@ -117,7 +117,7 @@ void load(std::map<std::string, std::list<Crime>>& base, const std::string& file
 				//https://legacy.cplusplus.com/reference/string/string/substr/
 				if (place[place.size() - 1] == ';')place[place.size() - 1] = 0;
 				int id = std::stoi(place);	//https://legacy.cplusplus.com/reference/string/stoi/?kw=stoi
-				place[0] = ' ';	//??????? ????? ? ?????? ??????
+				place[0] = ' ';	
 				place.erase(0, place.find_first_not_of(' '));
 				//https://legacy.cplusplus.com/reference/string/string/erase/
 				base[licence_plate].push_back(Crime(id, place));
