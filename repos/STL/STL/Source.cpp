@@ -12,7 +12,8 @@ using std::endl;
 //#define MY_EXCEPTION
 //#define STL_VECTOR
 //#define _EMPTY_AND_PUSHING_VALUES_ONE_BY_ONE_LIST
-#define VECTOR_LIST
+//#define VECTOR_LIST
+#define STL_LIST
 
 template<typename T>void print(const std::list<T>& bruh);
 template<typename T>void print(const std::vector<T>& vec);
@@ -83,6 +84,14 @@ void main()
 
 	vec.insert(vec.begin() + index, number,value);
 	print(vec);
+
+	do {
+		std::cout << "Введите индекс удаляемого элемента: "; std::cin >> index;
+		if (index >= vec.size())std::cout << "Out of range" << std::endl;
+	} while (index >= vec.size());
+	std::cout << "Введите количество удаляемых значений: "; std::cin >> number;
+	vec.erase(vec.begin() + index,vec.begin()+index+number);
+	for (int i : vec)std::cout << i << tab; std::cout<<std::endl;
 #endif // STL_VECTOR
 #ifdef _EMPTY_AND_PUSHING_VALUES_ONE_BY_ONE_LIST
 	std::list<int> bruh;
@@ -120,6 +129,18 @@ void main()
 	//bruh.insert(it,index, number);
 	print(bruh);
 #endif // VECTOR_LIST
+
+#ifdef STL_LIST
+	std::list<int> list = { 3,5,8,13,21,34,55 };
+	for (int i : list)std::wcout << i << tab; std::cout << std::endl;
+	int value, index;
+	std::cout << "Введите индекс добавляемого значения: "; std::cin >> index;
+	std::cout << "Введите значение добавляемого элемента: "; std::cin >> value;
+	std::list<int>::iterator position = list.begin();
+	for (int i = 0; i < index; i++)++position;
+	list.insert(position, value);
+	for (int i : list)std::cout << i << tab; std::cout << std::endl;
+#endif // STL_LIST
 
 }
 template<typename T>void print(const std::list<T>& bruh)
