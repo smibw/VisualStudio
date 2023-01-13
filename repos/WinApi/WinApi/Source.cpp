@@ -60,6 +60,10 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, IN
 	Одна и та же процедура окна может использоваться сразу для нескольких окон
 
 */
+
+CONST CHAR gsz_LOGIN_INVITATION[] = "Введите имя пользователя";
+CONST CHAR gsz_PASSWORD_INVITATION[] = "Введите пароль";
+
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
@@ -67,12 +71,54 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_INITDIALOG:
 	{
 		HICON hicon = LoadIcon(GetModuleHandle(NULL), (LPSTR)IDI_ICON1);
-		//SendMessage(hwnd, WM_SETICON, 0, (LPARAM)hIcon);
+		SendMessage(hwnd, WM_SETICON, 0, (LPARAM)hicon);
+
+		// Получаем обработчики окна текстовых полей
+		// HWND - Handler to Window(Обработчик окна)
+		HWND hEditLogin = GetDlgItem(hwnd, IDC_EDIT_LOGIN1);
+		HWND hEditPassword = GetDlgItem(hwnd, IDC_EDIT_PASSWORD1);
+
+		// Для того, чтобы установить текст в окна hEditLogin1 и hEditPassword1,
+		// нужно отправить сообщение этим сообщениям
+		SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)gsz_LOGIN_INVITATION);
+		SendMessage(hEditPassword, WM_SETTEXT, 0, (LPARAM)gsz_PASSWORD_INVITATION);
 	}
 		break;					// нужен для создания элементов окна
 	case WM_COMMAND:			// Обработка комманд нажатия кнопок
 		switch (LOWORD(wParam))
 		{
+		case IDC_EDIT_LOGIN1:
+		{
+			HWND hEditLogin = GetDlgItem(hwnd, IDC_EDIT_LOGIN1);
+			CONST INT SIZE = 256;
+			CHAR sz_buffer[SIZE] = {};
+			SendMessage(hEditLogin, WM_GETTEXT, SIZE, (LPARAM)sz_buffer);
+			if (HIWORD(wParam) == EN_SETFOCUS)
+			{
+				if(strcmp(sz_buffer,gsz_LOGIN_INVITATION)==0)
+					SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)"");
+			}
+			if (HIWORD(wParam) == EN_KILLFOCUS)
+			{
+					if (strlen(sz_buffer) == 0)
+					SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)gsz_LOGIN_INVITATION);
+			}
+		}
+		break;
+		case IDC_BUTTON_COPY:
+		{
+			//Создаем буфер, через который будет производиться копирование:
+			CONST INT SIZE = 256;
+			CHAR buffer[SIZE] = {};
+			//Получаем окна тактовых полей, для того, чтобы им можно было отправлять сообщения
+			HWND hEditLogin = GetDlgItem(hwnd, IDC_EDIT_LOGIN1);
+			HWND hEditPassword = GetDlgItem(hwnd, IDC_EDIT_PASSWORD1);
+			//Читаем содержимое тектового поля LOGIN:
+			SendMessage(hEditLogin, WM_GETTEXT, SIZE, (LPARAM)buffer);
+			//Загружаем текст из буфера в поле PASSWORD:
+			SendMessage(hEditPassword, WM_SETTEXT, 0, (LPARAM)buffer);
+		}
+		break;
 		case IDOK:MessageBox(NULL, "Была нажата кнопка ОК", "Info", MB_OK | MB_ICONINFORMATION); break;
 		case IDCANCEL:EndDialog(hwnd, 0);
 		}
