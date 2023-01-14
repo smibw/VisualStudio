@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include<Windows.h>
 #include<stdio.h>
 #include"resource.h"
@@ -38,7 +38,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			CHAR sz_output_buffer[SIZE] = {};
 			int i = SendMessage(hList, LB_GETCURSEL, 0, 0);	
 			SendMessage(hList, LB_GETTEXT, i, (LPARAM)sz_buffer);
-			sprintf(sz_output_buffer, "Вы выбрали строку № %i со значением\"%s\"", i, sz_buffer);
+			sprintf(sz_output_buffer, "Р’С‹ РІС‹Р±СЂР°Р»Рё СЃС‚СЂРѕРєСѓ в„– %i СЃРѕ Р·РЅР°С‡РµРЅРёРµРј\"%s\"", i, sz_buffer);
 			MessageBox(hwnd, sz_buffer, "Selected Item", MB_OK | MB_ICONINFORMATION);
 		}
 		case IDCANCEL:EndDialog(hwnd, 0); break;
