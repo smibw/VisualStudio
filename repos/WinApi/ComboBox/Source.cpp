@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include<Windows.h>
 #include<stdio.h>
 #include"resource.h"
@@ -35,9 +35,9 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			CONST INT SIZE = 256;
 			CHAR sz_buffer[SIZE] = {};
 			CHAR sz_output_buffer[SIZE] = {};
-			int i = SendMessage(hCombo, CB_GETCURSEL, 0, 0);	//Получаем номер выделенного элемента ComboBox
+			int i = SendMessage(hCombo, CB_GETCURSEL, 0, 0);	//РџРѕР»СѓС‡Р°РµРј РЅРѕРјРµСЂ РІС‹РґРµР»РµРЅРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° ComboBox
 			SendMessage(hCombo, CB_GETLBTEXT, i, (LPARAM)sz_buffer);
-			sprintf(sz_output_buffer, "Вы выбрали строку № %i со значением\"%s\"", i, sz_buffer);
+			sprintf(sz_output_buffer, "Р’С‹ РІС‹Р±СЂР°Р»Рё СЃС‚СЂРѕРєСѓ в„– %i СЃРѕ Р·РЅР°С‡РµРЅРёРµРј\"%s\"", i, sz_buffer);
 			MessageBox(hwnd, sz_output_buffer, "Selected item", MB_OK | MB_ICONINFORMATION);
 		}
 			break;
