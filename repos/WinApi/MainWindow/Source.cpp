@@ -262,7 +262,7 @@ INT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			}
 			sprintf(sz_buffer, "%f", a);
 			SendMessage(hEdit, WM_SETTEXT, 0, (LPARAM)sz_buffer);
-			stored = true;
+			stored = true;	
 		}
 	}
 		break;
