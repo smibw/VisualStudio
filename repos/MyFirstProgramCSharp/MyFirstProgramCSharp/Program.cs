@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace MyFirstProgramCSharp
 {
-    internal class Quiz
+    internal class Program
     {
-        static void Main(string[] args)
+        static void startQuiz()
         {
             string[] question =
             {
@@ -78,15 +79,17 @@ namespace MyFirstProgramCSharp
                         if(userAnswer == "ДА" || userAnswer == "да" || userAnswer == "Да")
                         {
                             help = true;
+                            if (help)
+                            {
+                                Console.WriteLine(UsefulHelper[i]);
+                            }
+                            i--;
                         }
                         else
                         {
                             help = false;
                         }
-                        if(help)
-                        {
-                            Console.WriteLine(UsefulHelper[i]);
-                        }
+                        
                     }
                 }
                 Console.WriteLine("Хотите начать заново?");
@@ -121,6 +124,80 @@ namespace MyFirstProgramCSharp
                     Console.WriteLine("Ваша оценка: 2");
                 }
             } while (restart);
+        }
+
+        static void guessNumber()
+        {
+            Random rand = new Random();
+            int magicNumber = rand.Next(0, 100);
+            int userNumber = 0;
+            int count = 0;
+            int maxTries = 7;
+
+            do
+            {
+                Write("Введи число: ");
+                userNumber = Int32.Parse(ReadLine());
+                count++;
+                if (maxTries == 0)
+                {
+                    WriteLine("Вы проиграли...");
+                    WriteLine("*звучит грустная музыка*");
+                    break;
+                }
+                if (userNumber < magicNumber)
+                {
+                    WriteLine("Загаданное число больше!");
+                    maxTries--;
+                    WriteLine("У вас осталось " + maxTries + " попыток");
+                }
+                else if (userNumber > magicNumber)
+                {
+                    WriteLine("Загаданное число меньше!");
+                    maxTries--;
+                    WriteLine("У вас осталось " + maxTries + " попыток");
+                }
+                else if (userNumber == magicNumber)
+                {
+                    WriteLine("Ты угадал! Тебе понадобилось " + count + " попыток");
+                    break;
+                }
+            } while (userNumber != magicNumber||maxTries!=0);
+        }
+
+        static void MainMenu()
+        {
+                int userMessage = 0;
+            do
+            {
+                WriteLine("\t\tГлавное меню");
+                WriteLine("1. startQuiz");
+                WriteLine("2. guessNumber");
+                WriteLine("Чтобы выйти нажмите 0.");
+                WriteLine("\nВыберите игру.");
+                userMessage = Int32.Parse(ReadLine());
+                if (userMessage == 1)
+                {
+                    startQuiz();
+                }
+                else if (userMessage == 2)
+                {
+                    guessNumber();
+                }
+                else if (userMessage == 0)
+                {
+                    WriteLine("Уже покидаете нас?");
+                }
+                else
+                {
+                    WriteLine("Команда не распознана!");
+                }
+            } while (userMessage != 0);
+        }
+
+        static void Main(string[] args)
+        {
+            MainMenu();
         }
     }
 }
