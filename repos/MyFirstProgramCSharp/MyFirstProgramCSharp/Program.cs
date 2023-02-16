@@ -149,13 +149,13 @@ namespace MyFirstProgramCSharp
                 {
                     WriteLine("Загаданное число больше!");
                     maxTries--;
-                    WriteLine("У вас осталось " + maxTries + " попыток");
+                    WriteLine("У вас осталось " + maxTries + " дополнительных попыток");
                 }
                 else if (userNumber > magicNumber)
                 {
                     WriteLine("Загаданное число меньше!");
                     maxTries--;
-                    WriteLine("У вас осталось " + maxTries + " попыток");
+                    WriteLine("У вас осталось " + maxTries + " дополнительных попыток");
                 }
                 else if (userNumber == magicNumber)
                 {
