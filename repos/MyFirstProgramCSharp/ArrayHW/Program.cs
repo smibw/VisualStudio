@@ -12,7 +12,7 @@ namespace ArrayHW
         static void Main(string[] args)
         {
             //  Task1
-            
+
             /*
             int[] A= new int[5];
             int[,] B = new int[3, 4];
@@ -143,8 +143,128 @@ namespace ArrayHW
             WriteLine("Максимальный элемент" + array.Cast<int>().Max());
             */
 
-            //Task3
+            //Task4
 
+            //int[,] matrixC = new int[,] { };
+            int i, j, a, b;
+            int number;
+            int answer=0;
+            WriteLine("Добро пожаловать в калькулятор матриц.");
+            WriteLine("Выберите действие, чтобы продолжить!");
+            WriteLine("1.Умножение числа на матрицу.");
+            WriteLine("2.Сложение матриц.");
+            WriteLine("3.Умножение матрицы на матрицу.");
+            do
+            {
+
+                answer = Int32.Parse(ReadLine());
+                switch (answer)
+                {
+                    case 1:
+                        {
+                            WriteLine("Введите размерность матрицы: ");
+                            WriteLine("Количество строк: ");
+                            i = Int32.Parse(ReadLine());
+                            WriteLine("Количество столбцов: ");
+                            j = Int32.Parse(ReadLine());
+                            int[,] matrixA = new int[i, j];
+                            Matrix(i, j, matrixA);
+                            WriteLine("Введите число для умножения матрицы на него: ");
+                            number = Int32.Parse(ReadLine());
+                            for (int k = 0; k < i; k++)
+                            {
+                                for (int h = 0; h < j; h++)
+                                {
+                                    matrixA[k, h] *= number;
+                                }
+                            }
+                            WriteLine("Матрица + " + number +" =");
+                            PrintMatrix(i, j, matrixA);
+                            break;
+                        }
+                    case 2:
+                        {
+                            WriteLine("Введите размерность матриц: ");
+                            WriteLine("Количество строк: ");
+                            i = Int32.Parse(ReadLine());
+                            WriteLine("Количество столбцов: ");
+                            j = Int32.Parse(ReadLine());
+                            int[,] matrixA = new int[i, j];
+                            int[,] matrixB = new int[i, j];
+                            Matrix(i, j, matrixA);
+                            Matrix(i, j, matrixB);
+                            int[,] matrixC = new int[i, j];
+                            for (int k=0; k<i;k++)
+                            {
+                                for(int h=0; h<j;h++)
+                                {
+                                    matrixC[k, h] = matrixA[k, h] + matrixB[k,h];
+                                }
+                            }
+                            
+                            WriteLine("Результат сложения двух матриц =");
+                            PrintMatrix(i, j, matrixC);
+                            break;
+                        }
+                    case 3:
+                        {
+                            WriteLine("Введите размерность матрицы: ");
+                            WriteLine("Количество строк: ");
+                            i = Int32.Parse(ReadLine());
+                            WriteLine("Количество столбцов: ");
+                            j = Int32.Parse(ReadLine());
+                            int[,] matrixA = new int[i, j];
+                            WriteLine("Введите размерность матрицы: ");
+                            WriteLine("Количество строк: " + j);
+                            WriteLine("Количество столбцов: ");
+                            b = Int32.Parse(ReadLine());
+                            int[,] matrixB = new int[j, b];
+                            Matrix(i, j, matrixA);
+                            Matrix(j, b, matrixB);
+                            int[,] matrixC = new int[i, b];
+                            for (int k = 0; k < i; k++)
+                            {
+                                for (int h = 0; h < b; h++)
+                                {
+                                    for(int n=0; n<j; n++)
+                                    {
+                                        matrixC[k, h] += matrixA[k, n] * matrixB[n, h];
+                                    }
+                                }
+                            }
+                            WriteLine("Результат перемножения двух матриц = ");
+                            PrintMatrix(i, b, matrixC);
+                            break;
+                        }
+                }
+                WriteLine("Выберите действие, чтобы продолжить!");
+                WriteLine("Для выхода из калькулятора введите 0");
+            } while(answer!=0);
+
+        }
+
+
+        static void PrintMatrix(int z, int x, int[,] matrix)
+        {
+            for (int k = 0; k < z; k++)
+            {
+                for (int h = 0; h < x; h++)
+                {
+                    Write(matrix[k, h]+" ");
+                }
+                WriteLine();
+            }
+        }
+        static void Matrix(int z, int x, int[,] matrix)
+        {
+            WriteLine("Введите значения матрицы: ");
+            for (int k = 0; k < z; k++)
+            {
+                for (int h = 0; h < x; h++)
+                {
+                    matrix[k, h] = Int32.Parse(ReadLine());
+                }
+            }
         }
 
         static void Print(string text, int[] arr)
